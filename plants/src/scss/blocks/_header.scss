@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $bg-color;
+  height: 13.4rem;
+
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 122rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text {
+    @include fz16;
+    color: #000;
+
+    &::before {
+      content: url("/src/icons/logo.svg");
+    }
+  }
+}
+.nav {
+  display: flex;
+  
+  &__item {
+    cursor: pointer;
+    @include fz16;
+    margin-right: 4.6rem;
+    &:last-child {
+      margin: 0;
+    }
+    &-link {
+      color: $link-color;
+      &--active {
+        color: $btn-color;
+      }
+    }
+  }
+}
