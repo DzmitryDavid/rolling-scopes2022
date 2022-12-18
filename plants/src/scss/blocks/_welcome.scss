@@ -1,6 +1,7 @@
 .welcome {
   background-color: $bg-color;
   padding-bottom: 9.4rem;
+  padding-top: 6.2rem;
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -33,9 +34,8 @@
   &__description-button {
     margin-top: 4.8rem;
     align-self: flex-start;
+    text-transform: uppercase;
+    color:#000;
     @include btn;
-  }
-  .green {
-    color: $main-color;
   }
 }

@@ -1,0 +1,67 @@
+.service {
+  padding-top: 4rem;
+  padding-bottom: 12rem;
+  background-color: $bg-color;
+  &__wrapper {
+    width: 122rem;
+    margin: 0 auto;
+  }
+  &__menu {
+    width: 100.07rem;
+    height: 9.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    width: 30rem;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 52px;
+  }
+  &__buttons {
+    width: 50rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3.8rem;
+  }
+  &__button {
+    width: 161px;
+    @include btn;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-family: "Inika",sans-serif;
+    color: $btn-color;
+  }
+  &__cards {
+    margin-top: 9rem;
+    display: grid;
+    grid-template-rows: 450px 450px;
+    grid-template-columns: repeat(3, 330px);
+    gap: 11.6rem;
+  }
+  &__card {
+    overflow: hidden;
+    border: 1px solid #e3e1d5;
+    overflow: hidden;
+    border-radius: 20px;
+    &-img {
+      & img {
+        width: 100%;
+      }
+    }
+    &-title {
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 700;
+      color: $btn-color;
+      font-size: 2rem;
+      line-height: 20px;
+    }
+    &-description {
+      margin-top: 1rem;
+      text-align: center;
+      color: $cardsubtitle-color;
+    }
+  }
+}

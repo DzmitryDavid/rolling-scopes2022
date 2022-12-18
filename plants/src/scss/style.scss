@@ -33,7 +33,7 @@ a {
 
 .container {
   margin: 0 auto;
-  // width: 144rem;
+  width: 144rem;
 }
 .green {
   color: $main-color;
@@ -44,3 +44,4 @@ a {
 @import "blocks/header";
 @import "blocks/welcome";
 @import "blocks/about";
+@import "blocks/service";
