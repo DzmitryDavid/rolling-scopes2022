@@ -1,0 +1,31 @@
+.about {
+  padding: 9.4rem 0;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1;
+    width: 122rem;
+    margin: 0 auto;
+  }
+  &__img {
+    width: 46.4rem;
+    img {
+      width: 100%;
+    }
+  }
+  &__description {
+    width: 60.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__description-title {
+    @include title;
+    color: $cardsubtitle-color;
+  }
+  &__description-subtitle {
+    margin-top: 4rem;
+    @include subtitle;
+  }
+}

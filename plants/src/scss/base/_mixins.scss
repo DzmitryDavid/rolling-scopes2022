@@ -36,3 +36,10 @@ line-height: 35px;
 
 color: $subtitle-color;
 }
+@mixin descr {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 30px;
+  color: $subtitle-color;
+}

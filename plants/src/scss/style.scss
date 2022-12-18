@@ -35,6 +35,12 @@ a {
   margin: 0 auto;
   // width: 144rem;
 }
-
+.green {
+  color: $main-color;
+}
+.orangered {
+  color:$btn-color;
+}
 @import "blocks/header";
 @import "blocks/welcome";
+@import "blocks/about";
