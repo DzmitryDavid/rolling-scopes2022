@@ -13,6 +13,22 @@
     transition: all 0.3s ease-out;
   }
 }
+@mixin btn-Inika {
+  border: 2px solid #e06733;
+  border-radius: 10px;
+  padding: 14px 27px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color:$btn-color;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background-color: $btn-color;
+    transition: all 0.3s ease-out;
+  }
+}
 @mixin fz16 {
   font-size: 1.6rem;
   font-family: "Inika", sans-serif;

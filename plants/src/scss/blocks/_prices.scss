@@ -3,11 +3,32 @@
     width: 122rem;
     display: flex;
     flex: 1 1;
+    gap: 43rem;
     padding-top: 4rem;
     margin: 0 auto;
   }
   &__heading {
     @include title;
+  }
+  &__gardeners {
+    text-align: right;
+    &-title {
+      width: 45.2rem;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+    }
+    &-img {
+      margin-top: 3.9rem;
+    }
+    &-button {
+      margin-top: 3.8rem;
+      font-family: "Inika",sans-serif;
+      text-align: right;
+      color: $btn-color;
+      @include btn-Inika;
+      background-color: #fff;
+    }
   }
 }
 .accordion {
