@@ -10,6 +10,11 @@
   padding: 0;
   scroll-behavior: smooth;
   color: #302e2d;
+
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
 }
 
 :root {
@@ -28,21 +33,21 @@ a {
   &:hover {
     text-decoration: none;
   }
-  
 }
 
 .container {
   margin: 0 auto;
-  // width: 144rem;
+  width: 144rem;
 }
 .green {
   color: $main-color;
 }
 .orangered {
-  color:$btn-color;
+  color: $btn-color;
 }
 @import "blocks/header";
 @import "blocks/welcome";
 @import "blocks/about";
 @import "blocks/service";
 @import "blocks/prices";
+@import "blocks/contacts";

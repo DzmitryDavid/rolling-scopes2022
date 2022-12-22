@@ -1,16 +1,18 @@
 .prices {
+  padding-top: 4rem;
+  padding-bottom: 11.5rem;
   &__wrapper {
-    width: 122rem;
     display: flex;
-    flex: 1 1;
-    gap: 43rem;
-    padding-top: 4rem;
-    margin: 0 auto;
-  }
+    justify-content: space-between;
+    padding: $wrapper-padding;
+  } 
   &__heading {
-    @include title;
+    @include main-title;
   }
   &__gardeners {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     text-align: right;
     &-title {
       width: 45.2rem;
@@ -20,10 +22,11 @@
     }
     &-img {
       margin-top: 3.9rem;
+      width: 152px;
     }
     &-button {
       margin-top: 3.8rem;
-      font-family: "Inika",sans-serif;
+      font-family: "Inika", sans-serif;
       text-align: right;
       color: $btn-color;
       @include btn-Inika;
@@ -40,6 +43,9 @@
     width: 33.2rem;
     padding: 34px 41px;
     margin-top: 6rem;
+    button:last-of-type {
+      margin-bottom: 0;
+    }
   }
   &__button {
     position: relative;
@@ -47,6 +53,7 @@
     text-align: left;
     @include accordion-select;
     margin-bottom: 3.2rem;
+    
   }
   &__panel {
     position: relative;

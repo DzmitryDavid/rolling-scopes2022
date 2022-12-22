@@ -20,7 +20,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
-  color:$btn-color;
+  color: $btn-color;
   cursor: pointer;
 
   &:hover {
@@ -31,21 +31,27 @@
 }
 @mixin fz16 {
   font-size: 1.6rem;
-  font-family: "Inika", sans-serif;
   font-weight: 400;
   line-height: 50px;
 }
-@mixin title {
+@mixin main-title {
   font-style: normal;
   font-weight: 700;
   font-size: 4.5rem;
   line-height: 50px;
 }
+@mixin secondary-title {
+  font-family: "Inika", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+}
 @mixin subtitle {
   font-style: normal;
   font-weight: 400;
   font-size: 2rem;
-  line-height: 35px;
+  line-height: 30px;
 
   color: $subtitle-color;
 }
@@ -68,4 +74,18 @@
   border-radius: 20px;
   border: none;
   outline: none;
+}
+@mixin dropdown-select {
+  width: 45rem;
+  height: 5rem;
+  background-color: $cardsubtitle-color;
+  background: #d6e7d2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  color: #717171;
+  letter-spacing: 0.05em;
 }

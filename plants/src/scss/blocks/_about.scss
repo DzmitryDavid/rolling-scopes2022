@@ -1,11 +1,9 @@
 .about {
   padding: 9.4rem 0;
   &__wrapper {
+    padding: $wrapper-padding;
     display: flex;
     justify-content: space-between;
-    flex: 1 1;
-    width: 122rem;
-    margin: 0 auto;
   }
   &__img {
     width: 46.4rem;
@@ -18,11 +16,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
   }
   &__description-title {
-    @include title;
+    width: 46.3rem;
     color: $cardsubtitle-color;
+    @include secondary-title;
+    span {
+      font-family: "Inika",sans-serif;
+    }
   }
   &__description-subtitle {
     margin-top: 4rem;

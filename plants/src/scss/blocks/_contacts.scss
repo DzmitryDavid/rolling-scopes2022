@@ -1,0 +1,31 @@
+.contacts {
+  background-color: $bg-color;
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10.9rem 0 10.9rem;
+  }
+  &__title {
+    font-family: "Inika";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    margin-top: 6rem;
+  }
+  &__img {
+    margin-top: 53px;
+    width: 40rem;
+    height: 49rem;
+    background-image: url("/src/img/contact_woman.png");
+  }
+  &__dropdown {
+    margin-top: 14.3rem;
+    
+    select {
+      outline: none;
+      border:none;
+      @include dropdown-select;
+    }
+  }
+}

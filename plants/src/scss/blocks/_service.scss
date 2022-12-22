@@ -3,8 +3,7 @@
   padding-bottom: 12rem;
   background-color: $bg-color;
   &__wrapper {
-    width: 122rem;
-    margin: 0 auto;
+    padding: $wrapper-padding;
   }
   &__menu {
     width: 100.07rem;

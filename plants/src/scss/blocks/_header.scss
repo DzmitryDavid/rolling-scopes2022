@@ -1,17 +1,15 @@
 .header {
-  width: 100%;
   display: flex;
   align-items: center;
   background-color: $bg-color;
   height: 13.4rem;
 
   &__wrapper {
-    margin: 0 auto;
-    width: 122rem;
     height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding:$wrapper-padding;
   }
   &__logo {
     display: flex;
@@ -29,16 +27,20 @@
 }
 .nav {
   display: flex;
-  
   &__item {
-    cursor: pointer;
     @include fz16;
     margin-right: 4.6rem;
+    cursor: pointer;
     &:last-child {
       margin: 0;
     }
     &-link {
+      font-family: "Inika",sans-serif;
       color: $link-color;
+      &:hover {
+        color: $btn-color;
+        transition: all 0.2s ease-out;
+      }
       &--active {
         color: $btn-color;
       }

@@ -5,9 +5,7 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    flex: 1 1;
-    width: 122rem;
-    margin: 0 auto;
+    padding: $wrapper-padding;
   }
   &__img {
     width: 44rem;
@@ -23,7 +21,7 @@
     align-items: center;
   }
   &__description-title {
-    @include title;
+    @include main-title;
     color: $cardsubtitle-color;
   }
   &__description-subtitle {
