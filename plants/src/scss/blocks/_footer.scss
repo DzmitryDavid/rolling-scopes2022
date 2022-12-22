@@ -1,0 +1,35 @@
+.footer {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 109px 40px 109px;
+  }
+  &__date {
+    display: flex;
+    justify-content: space-between;
+    width: 18.2rem;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 50px;
+    div {
+      color:#000;
+    }
+  }
+  &__school {
+    color:#000;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 50px;
+  }
+}
+.social__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 188px;
+  height: 5rem;
+  &-item {
+    cursor:pointer;
+  }
+}
