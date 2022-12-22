@@ -268,16 +268,33 @@
         <div class="contacts__wrapper">
           <div class="contacts__img"></div>
           <h2 class="contacts__title green">Contact us</h2>
-          <div class="contacts__dropdown">
-            <select name="" id="" class="contacts__select">
-              <option value="">City</option>
-            </select>
-          </div>
 
+          <div class="contacts__dropdown">
+            <div class="dropdown__wrapper">
+              <div class="round round__select">
+                <svg class="round__arrow" width="6" height="4" viewBox="0 0 6 4" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.00003 3.00656L1.00003 1.00667" stroke="#fff" stroke-width="0.5"
+                    stroke-linecap="round" />
+                  <path d="M3 3.00635L5 1.00635" stroke="#fff" stroke-width="0.5" stroke-linecap="round" />
+                </svg>
+              </div>
+              <select name="city" id="select" class="contacts__select">
+                <option value="city">City</option>
+                <option value="Canandaigua">Canandaigua, NY</option>
+                <option value="New York">New York City</option>
+              </select>
+            </div>
+            
+          </div>
         </div>
       </div>
     </section>
   </main>
+  <footer class="footer">
+    
+  </footer>
+
   <script src="src/js/index.js"></script>
 </body>
 
