@@ -23,13 +23,13 @@
     color: $cardsubtitle-color;
     @include secondary-title;
     span {
-      font-family: "Inika",sans-serif;
+      font-family: "Inika", sans-serif;
     }
   }
   &__description-subtitle {
     margin-top: 4rem;
     font-weight: 400;
-font-size: 20px;
-line-height: 30px;
+    font-size: 20px;
+    line-height: 30px;
   }
 }

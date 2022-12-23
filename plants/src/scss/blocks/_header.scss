@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:$wrapper-padding;
+    padding: 0 8.98rem 0 10.9rem;
   }
   &__logo {
     display: flex;
@@ -29,13 +29,13 @@
   display: flex;
   &__item {
     @include fz16;
-    margin-right: 4.7rem;
+    margin-right: 48px;
     cursor: pointer;
     &:last-child {
       margin: 0;
     }
     &-link {
-      font-family: "Inika",sans-serif;
+      font-family: "Inika", sans-serif;
       color: $link-color;
       &:hover {
         color: $btn-color;

@@ -120,30 +120,4 @@
   }
 }
 
-.round {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 17px;
-  right: 40px;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  background-color: #d9d9d9;
-  pointer-events: none;
-  &--opened {
-    background-color: #aea1a1;
-  }
-  &__arrow--up {
-    transform: rotateX(-180deg);
-    path {
-      stroke: #fff;
-    }
-  }
-}
-.divider {
-  width: 16.4rem;
-  margin-top: 1.6rem;
-  border: 0.5px solid #aea1a1;
-}
+
