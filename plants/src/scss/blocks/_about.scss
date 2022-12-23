@@ -1,0 +1,35 @@
+.about {
+  padding: 9.3rem 0;
+  &__wrapper {
+    padding: $wrapper-padding;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__img {
+    width: 46.4rem;
+    img {
+      width: 100%;
+    }
+  }
+  &__description {
+    width: 60.5rem;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__description-title {
+    width: 46.3rem;
+    color: $cardsubtitle-color;
+    @include secondary-title;
+    span {
+      font-family: "Inika",sans-serif;
+    }
+  }
+  &__description-subtitle {
+    margin-top: 4rem;
+    font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+  }
+}

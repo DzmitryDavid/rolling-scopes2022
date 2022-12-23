@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $bg-color;
+  height: 13.4rem;
+
+  &__wrapper {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:$wrapper-padding;
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text {
+    @include fz16;
+    color: #000;
+
+    &::before {
+      content: url("../icons/logo.svg");
+    }
+  }
+}
+.nav {
+  display: flex;
+  &__item {
+    @include fz16;
+    margin-right: 4.7rem;
+    cursor: pointer;
+    &:last-child {
+      margin: 0;
+    }
+    &-link {
+      font-family: "Inika",sans-serif;
+      color: $link-color;
+      &:hover {
+        color: $btn-color;
+        transition: all 0.2s ease-out;
+      }
+      &--active {
+        color: $btn-color;
+      }
+    }
+  }
+}
