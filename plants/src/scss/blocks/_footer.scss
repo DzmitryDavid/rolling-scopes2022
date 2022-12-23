@@ -13,6 +13,12 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 50px;
+    &-github a {
+      &:hover {
+        transition: all .4s ease-out;
+        color: $btn-color;
+      }
+    }
     div {
       color:#000;
     }
@@ -22,6 +28,13 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 50px;
+    a {
+      &:hover {
+        transition: all .4s ease-out;
+        color: $btn-color;
+      }
+
+    }
   }
 }
 .social__list {
@@ -32,5 +45,9 @@
   height: 5rem;
   &-item {
     cursor:pointer;
+    &:hover {
+      transition: all .2s ease-out;
+      transform: scale(1.07)
+    }
   }
 }
