@@ -1,5 +1,5 @@
 .about {
-  padding: 9.4rem 0;
+  padding: 9.3rem 0;
   &__wrapper {
     padding: $wrapper-padding;
     display: flex;
@@ -13,6 +13,7 @@
   }
   &__description {
     width: 60.5rem;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,6 +28,8 @@
   }
   &__description-subtitle {
     margin-top: 4rem;
-    @include subtitle;
+    font-weight: 400;
+font-size: 20px;
+line-height: 30px;
   }
 }

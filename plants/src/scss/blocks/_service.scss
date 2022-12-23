@@ -6,32 +6,30 @@
     padding: $wrapper-padding;
   }
   &__menu {
-    width: 100.07rem;
+    width: 1007px;
     height: 9.4rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
   &__title {
-    font-family: "Inika",sans-serif;
+    font-family: "Inika", sans-serif;
     width: 30rem;
     font-weight: 400;
     font-size: 40px;
     line-height: 52px;
   }
   &__buttons {
-    width: 50rem;
+    width: 56rem;
     display: flex;
     justify-content: space-between;
-    gap: 3.8rem;
+    padding-top: 10px;
   }
   &__button {
+    @include btn-Inika;
     width: 161px;
-    @include btn;
-    font-size: 2rem;
+    height: 50px;
     text-transform: capitalize;
-    font-family: "Inika",sans-serif;
-    color: $btn-color;
   }
   &__cards {
     margin-top: 9rem;
@@ -39,6 +37,7 @@
     grid-template-rows: 450px 450px;
     grid-template-columns: repeat(3, 330px);
     gap: 11.6rem;
+    row-gap: 55px;
   }
   &__card {
     overflow: hidden;
@@ -51,14 +50,17 @@
       }
     }
     &-title {
-      margin-top: 1rem;
       text-align: center;
+      margin-top: 0.8rem;
       font-weight: 700;
       color: $btn-color;
       font-size: 2rem;
       line-height: 20px;
     }
     &-description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
       margin-top: 1rem;
       text-align: center;
       color: $cardsubtitle-color;

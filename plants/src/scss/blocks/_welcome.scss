@@ -1,7 +1,7 @@
 .welcome {
   background-color: $bg-color;
-  padding-bottom: 9.4rem;
-  padding-top: 6.2rem;
+  padding-bottom: 7.4rem;
+  padding-top: 4.9rem;
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -15,6 +15,7 @@
   }
   &__description {
     width: 54.9rem;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
     justify-content: center;

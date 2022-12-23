@@ -12,6 +12,7 @@
     font-size: 40px;
     line-height: 52px;
     margin-top: 6rem;
+    margin-left: 45px;
   }
   &__img {
     margin-top: 53px;
@@ -20,7 +21,7 @@
     background-image: url("/src/img/contact_woman.png");
   }
   &__dropdown {
-    margin-top: 14.3rem;
+    margin-top: 15rem;
   }
   &__select {
     @include dropdown-select;
