@@ -3,25 +3,26 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 0 10.9rem 0 10.9rem;
+    padding: $wrapper-padding;
   }
   &__title {
-    font-family: "Inika";
+    font-family: "Inika", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
     line-height: 52px;
-    margin-top: 6rem;
+
     margin-left: 45px;
+    margin-top: 7rem;
   }
   &__img {
-    margin-top: 53px;
+    margin-top: 6rem;
     width: 40rem;
     height: 49rem;
-    background-image: url("/src/img/contact_woman.png");
+    background-image: url("../img/contact_woman.png");
   }
   &__dropdown {
-    margin-top: 15rem;
+    margin-top: 16rem;
   }
   &__select {
     @include dropdown-select;

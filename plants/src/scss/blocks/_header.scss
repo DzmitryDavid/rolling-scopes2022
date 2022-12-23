@@ -21,7 +21,7 @@
     color: #000;
 
     &::before {
-      content: url("/src/icons/logo.svg");
+      content: url("../icons/logo.svg");
     }
   }
 }
