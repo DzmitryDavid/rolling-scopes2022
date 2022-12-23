@@ -36,6 +36,28 @@
       }
     }
   }
+  .about {
+    padding: 0;
+    &__wrapper {
+      flex-direction: column;
+      padding: 4rem 5rem 9.5rem 5rem;
+    }
+    &__description {
+      width: 100%;
+      margin-top: 0;
+      &-title {
+        align-self: center;
+        text-align: center;
+      }
+      &-subtitle {
+      }
+    }
+    &__img {
+      align-self: center;
+      margin-top: 4rem;
+      width: 25rem;
+    }
+  }
 }
 // @media (max-width: 1199.98px) { }
 
