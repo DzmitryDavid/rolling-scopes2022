@@ -1,4 +1,4 @@
-const quoteElement =  document.querySelector('#quote');
+const quoteElement = document.querySelector('#quote');
 const quoteAuthorElement = document.querySelector('#author');
 const changeQuoteBtn = document.querySelector('.change-quote');
 
@@ -15,10 +15,11 @@ export const getQuotes = async function () {
 export const getQuote = (quotes) => {
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
   quoteElement.textContent = quote.text;
-  quoteAuthorElement.textContent = quote.author;
+  !quote.author
+    ? (quoteAuthorElement.textContent = 'Unknown')
+    : (quoteAuthorElement.textContent = quote.author);
 };
 
 changeQuoteBtn.addEventListener('click', () => {
-  getQuotes()
-})
-
+  getQuotes();
+});

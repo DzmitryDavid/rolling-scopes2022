@@ -30,15 +30,49 @@ body {
   min-height: 220px;
   padding: 20px;
 }
-
+.player {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background: #e7e7e7; */
+  box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
+}
+.player__title,
+.player__artist {
+  margin-top: 5px;
+}
 .player-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 120px;
-  margin-bottom: 28px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
+.duration__wrapper {
+  position: relative;
+  top: -25px;
+  display: flex;
+  justify-content: space-between;
+}
+.progress {
+  background: #242323;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+.progress__container {
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 30px 20px;
+  height: 4px;
+  width: 90%;
+}
 .play-list {
   text-align: left;
 }
@@ -258,16 +292,15 @@ body {
 
 .quote {
   min-height: 32px;
+  font-size: 25px;
 }
 #quote {
   padding: 0 0.3rem 0 0.3rem;
-
 }
 
 .author {
   min-height: 20px;
   text-align: center;
-  
 }
 
 @media (max-width: 768px) {
