@@ -35,7 +35,6 @@ const loadSong = (song) => {
   songTitle.textContent = song.title;
   // songAuthor.textContent = song.author;
   audio.src = song.src;
-  console.log(song.title);
 };
 
 const nextSong = () => {
@@ -101,6 +100,7 @@ function setProgressBar(e) {
 nextBtn.addEventListener('click', nextSong);
 prevBtn.addEventListener('click', prevSong);
 audio.addEventListener('timeupdate', updateProgressBar);
+audio.addEventListener('ended', nextSong);
 progressContainer.addEventListener('click', setProgressBar);
 
 loadSong(playlist[songIndex]);

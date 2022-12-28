@@ -1,6 +1,7 @@
 const quoteElement = document.querySelector('#quote');
 const quoteAuthorElement = document.querySelector('#author');
 const changeQuoteBtn = document.querySelector('.change-quote');
+// Fix long quote!!
 
 export const getQuotes = async function () {
   try {
