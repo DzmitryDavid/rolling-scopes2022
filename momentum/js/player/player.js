@@ -7,7 +7,7 @@ const prevBtn = document.querySelector('.play-prev');
 const nextBtn = document.querySelector('.play-next');
 const songTitle = document.querySelector('.player__title');
 const songAuthor = document.querySelector('.player__author');
-const progressContainer = document.querySelector('progress__container');
+const progressContainer = document.querySelector('.progress__container');
 const progressBar = document.querySelector('.progress');
 const currentTimeElement = document.querySelector('#current-time');
 const durationElement = document.querySelector('#duration');
@@ -90,8 +90,17 @@ const updateProgressBar = (e) => {
     }
   }
 };
+function setProgressBar(e) {
+  const { duration } = audio;
+  const progressSong = (e.offsetX / this.clientWidth) * duration;
+  const progressBarWidth = (e.offsetX / this.clientWidth) * 100;
+  audio.currentTime = progressSong;
+  progressBar.style.width = `${progressBarWidth}%`;
+}
 
 nextBtn.addEventListener('click', nextSong);
 prevBtn.addEventListener('click', prevSong);
 audio.addEventListener('timeupdate', updateProgressBar);
+progressContainer.addEventListener('click', setProgressBar);
+
 loadSong(playlist[songIndex]);
