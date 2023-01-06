@@ -1,4 +1,4 @@
-@media (max-width: 1350.98px) {
+@media (max-width: 1330.98px) {
   .container {
     width: 768px;
   }
@@ -102,6 +102,35 @@
     }
   }
   .prices {
+    padding-bottom: 8.8rem;
+    padding-top: 4rem;
+    &__wrapper {
+      padding: 0 5rem 0 5rem;
+      margin-top: 5rem;
+    }
+    &__heading {
+      width: 17.5%;
+      font-size: 35px;
+      line-height: 42px;
+      margin-left: 5rem ;
+    }
+    &__gardeners {
+
+      &-title {
+        font-size: 25px;
+        line-height: 35px;
+        width: 29.6rem;
+      }
+      &-button {
+        margin-top: 22px;
+      }
+      &-img {
+        margin-top: 34px;
+      }
+    }
+  }
+  .accordion__wrapper {
+    margin-top: 0;
   }
 }
 // @media (max-width: 1199.98px) { }

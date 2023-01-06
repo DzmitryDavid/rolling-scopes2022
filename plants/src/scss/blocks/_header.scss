@@ -1,14 +1,12 @@
 .header {
-  display: flex;
-  align-items: center;
+
   background-color: $bg-color;
-  height: 13.4rem;
   &__wrapper {
-    height: 5rem;
+    height: 13.4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 8.98rem 0 10.9rem;
+    padding: $wrapper-padding;
   }
   &__logo {
     display: flex;

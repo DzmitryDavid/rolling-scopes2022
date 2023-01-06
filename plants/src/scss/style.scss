@@ -37,7 +37,7 @@ a {
 
 .container {
   margin: 0 auto;
-  width: 144rem;
+  max-width: 144rem;
 }
 .green {
   color: $main-color;
