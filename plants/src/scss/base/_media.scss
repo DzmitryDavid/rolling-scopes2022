@@ -112,10 +112,9 @@
       width: 17.5%;
       font-size: 35px;
       line-height: 42px;
-      margin-left: 5rem ;
+      margin-left: 5rem;
     }
     &__gardeners {
-
       &-title {
         font-size: 25px;
         line-height: 35px;
@@ -139,7 +138,7 @@
     &__wrapper {
       display: flex;
       justify-content: center;
-      align-items:center;
+      align-items: center;
       flex-direction: column-reverse;
     }
     &__title {
@@ -151,7 +150,6 @@
     }
     &__dropdown {
       margin-top: 10rem;
-
     }
     &__img {
       margin-top: 25rem;
@@ -161,7 +159,6 @@
       background-size: cover;
       background-position: center;
       background-image: url("../img/contact_woman-small.png");
-      
     }
   }
   .footer {
@@ -177,8 +174,165 @@
 @media (max-width: 991.98px) {
 }
 
-@media (max-width: 767.98px) {
-  
+@media (max-width: 789.98px) {
+  .container {
+    width: 380px;
+  }
+  .header {
+    &__wrapper {
+      height: 9.6rem;
+      padding: 3.6rem 2.5rem 3.6rem 2.5rem;
+      // padding: 2.4rem 0 0 2.5rem;
+    }
+    &__nav {
+      display: none;
+    }
+  }
+
+  .welcome {
+    &__wrapper {
+      padding: 2.4rem 2.5rem 2.4rem 2.5rem;
+    }
+    &__description {
+      &-title {
+        font-size: 25px;
+        line-height: 35px;
+      }
+      &-subtitle {
+        font-size: 16px;
+        line-height: 25px;
+      }
+      &-button {
+        padding: 6px 15px;
+        width: 10rem;
+        font-size: 1rem;
+        line-height: 20px;
+      }
+    }
+    &__img {
+      display: none;
+    }
+  }
+  .about {
+    &__wrapper {
+      padding: 0 2.5rem 3.1rem 2.5rem;
+    }
+    &__description {
+      &-title {
+        margin-top: 2rem;
+        width: auto;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 33px;
+      }
+      &-subtitle {
+        margin-top: 2rem;
+        font-size: 15px;
+        line-height: 25px;
+      }
+    }
+    &__img {
+      margin-top: 0.3rem;
+    }
+  }
+  .service {
+    &__wrapper {
+      padding: 0 2.5rem 3.1rem 2.5rem;
+    }
+    &__button {
+      width: 121px;
+      height: 35px;
+      font-size: 15px;
+      line-height: 20px;
+    }
+    &__buttons {
+      height: 8rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+      width: 25.2rem;
+    }
+    &__card {
+      width: 28rem;
+      height: 45rem;
+    }
+    &__cards {
+      // padding: 0 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .prices {
+    padding-top: 2rem;
+    &__heading {
+      margin: 0;
+      width: auto;
+      text-align: center;
+    }
+    &__wrapper {
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__gardeners {
+      align-items: center;
+      &-button {
+        width: 12.1rem;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        height: 35px;
+        // padding: 5px 15px;
+      }
+      &-title {
+        margin-top: 1.9rem;
+        width: 23rem;
+        font-size: 20px;
+        line-height: 35px;
+        text-align: center;
+      }
+      &-img {
+        display: none;
+      }
+    }
+  }
+  .hamburger {
+    visibility: visible;
+  }
+  .accordion {
+    &__wrapper {
+      padding: 29px 22px;
+      width: 224px;
+      height: 235px;
+    }
+    &__button {
+      margin-bottom:13.9px ;
+      font-size: 15px;
+      line-height: 20px;
+      width: 180px;
+      height: 49.72px;
+    }
+  }
+  .contacts {
+    padding: 0;
+    &__wrapper {
+      padding: 0;
+    }
+    &__title {
+      margin-top: 2rem;
+    }
+    &__dropdown {
+      width: 30rem;
+    }
+    &__select {
+      width: 100%;
+    }
+    &__img {
+      margin-top: 13.2rem;
+      width: 10rem;
+      height: 12.5rem;
+    }
+  }
 }
 
 @media (max-width: 575.98px) {
