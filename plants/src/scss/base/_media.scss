@@ -49,8 +49,6 @@
         align-self: center;
         text-align: center;
       }
-      &-subtitle {
-      }
     }
     &__img {
       align-self: center;
@@ -282,7 +280,6 @@
         line-height: 20px;
         text-align: center;
         height: 35px;
-        // padding: 5px 15px;
       }
       &-title {
         margin-top: 1.9rem;
@@ -306,7 +303,7 @@
       height: 235px;
     }
     &__button {
-      margin-bottom:13.9px ;
+      margin-bottom: 13.9px;
       font-size: 15px;
       line-height: 20px;
       width: 180px;
@@ -332,6 +329,9 @@
       width: 10rem;
       height: 12.5rem;
     }
+  }
+  .round__select {
+    right: 17px;
   }
 }
 
