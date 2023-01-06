@@ -132,6 +132,38 @@
   .accordion__wrapper {
     margin-top: 0;
   }
+
+  .contacts {
+    background-color: $bg-color;
+    padding-top: 4rem;
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      flex-direction: column-reverse;
+    }
+    &__title {
+      margin: 0;
+      order: 1;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 52px;
+    }
+    &__dropdown {
+      margin-top: 10rem;
+
+    }
+    &__img {
+      margin-top: 25rem;
+      width: 20rem;
+      height: 24.9rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url("../img/contact_woman-small.png");
+      
+    }
+  }
 }
 // @media (max-width: 1199.98px) { }
 
