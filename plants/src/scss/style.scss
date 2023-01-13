@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  color: #302e2d;
+  color: #000;
 
   &::after,
   &::before {
@@ -37,7 +37,7 @@ a {
 
 .container {
   margin: 0 auto;
-  width: 144rem;
+  max-width: 144rem;
 }
 .green {
   color: $main-color;
@@ -79,3 +79,5 @@ a {
 @import "blocks/prices";
 @import "blocks/contacts";
 @import "blocks/footer";
+@import 'blocks/burger';
+@import "base/media";
