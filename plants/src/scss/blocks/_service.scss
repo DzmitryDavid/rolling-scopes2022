@@ -30,6 +30,11 @@
     width: 161px;
     height: 50px;
     text-transform: capitalize;
+    &-active {
+      background-color:#e06733;
+      color: #fff;
+      transition: all .3s ease-out;
+    }
   }
   &__cards {
     margin-top: 9rem;
