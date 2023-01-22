@@ -60,33 +60,33 @@
     width: 33.2rem;
     padding: 34px 41px;
     margin-top: 6rem;
-    button:last-of-type {
-      margin-bottom: 0;
-    }
   }
-  &__button {
-    position: relative;
-    padding: 16px 0 16px 40px;
-    text-align: left;
-    @include accordion-select;
-    margin-bottom: 3.2rem;
-    cursor: pointer;
+  &__content {
+    transition: all 0.5s ease-in-out;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    overflow-y: hidden;
   }
   &__panel {
-    position: relative;
     display: flex;
+    position: relative;
     flex-direction: column;
     padding: 0 4rem 1.2rem 4rem;
     width: 25rem;
-    background-color: #d6e7d2;
     border-radius: 20px;
-    display: none;
+    transition: all 0.5s ease-in-out;
+    background: $bg-color;
+    margin-bottom: 3.2rem;
+    cursor: pointer;
+
     &-title {
       margin-top: 1.6rem;
       font-weight: 700;
       font-size: 2rem;
       line-height: 20px;
     }
+
     &-description {
       margin-top: 6px;
       font-weight: 300;
@@ -107,6 +107,9 @@
       }
     }
     &-button {
+      display: flex;
+      justify-content: center;
+      align-items:center;
       margin-top: 1.2rem;
       width: 86px;
       height: 25px;
@@ -120,5 +123,14 @@
   }
 }
 
-
-
+.accordion-active .accordion__content {
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+  overflow-y: hidden;
+  visibility: visible;
+  height: 125px;
+}
+.back {
+  transition: 0.5s ease-in-out;
+  background-color: #d6e7d2;
+}
