@@ -1,2 +1,4 @@
 import accordion from  './accordion.js';
-accordion()
+import {select} from  './select.js';
+accordion();
+select()

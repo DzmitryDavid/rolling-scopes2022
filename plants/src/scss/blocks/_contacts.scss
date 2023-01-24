@@ -24,14 +24,6 @@
   &__dropdown {
     margin-top: 15.5rem;
   }
-  &__select {
-    @include dropdown-select;
-    &:focus,
-    &:active {
-      transition: all 0.3s ease-out;
-      background-color: #c1e698;
-    }
-  }
 }
 .dropdown {
   &__wrapper {
@@ -40,4 +32,92 @@
 }
 .round__select {
   background-color: #aea1a1;
+}
+.select {
+  position: relative;
+  @include dropdown-select;
+  &__current {
+    position: relative;
+    letter-spacing: 0.05em;
+    color: #717171;
+  }
+  &__body {
+    position: absolute;
+    flex-direction: column;
+    display: none;
+    visibility: hidden;
+    width: 450px;
+    height: 0;
+    left: 0;
+    top: 55px;
+    background: #dce9d9;
+    transition: all 1s ease-in-out;
+    z-index: 3;
+  }
+  &__item {
+    margin: 0 auto;
+    margin-top: 12px;
+    padding-left: 5px;
+    width: 380px;
+    color: $main-color;
+    border-bottom: 1px solid #d9d9d9;
+    &:hover {
+      color: #717171;
+      border-bottom: 1px solid #717171;
+    }
+  }
+}
+.select.select-active {
+  background-color: #c1e698;
+  color: #717171;
+}
+.select.select-active .select__body {
+  display: flex;
+  visibility: visible;
+  height: 234px;
+  transition: all 3s ease-in-out;
+}
+.adress__card {
+  top: 0;
+  left: 0;
+  background: #edf2ec;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  width: 448px;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease;
+  
+  &-content {
+    padding: 17px 0 0 35px;
+    justify-content: space-around;
+    display: flex;
+    width: 339px;
+    height: 165px;
+  }
+  
+  &-title p{
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+    color: #000;
+  }
+  &-description p {
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+    color: #717171;
+  }
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: all .5s ease;
+  height: 214px;
+}
+.card__wrapper {
+  position: relative;
+  margin-top: 47px;
 }

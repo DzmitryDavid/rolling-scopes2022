@@ -1,22 +1,38 @@
 const accordion = () => {
   const accordionPanel = document.querySelectorAll('.accordion__panel');
 
-  accordionPanel.forEach((panel) => {
+  accordionPanel.forEach((panel, index) => {
     panel.addEventListener('click', (e) => {
-      console.log(e.target);
-
       if (!e.target.classList.contains('accordion__panel-button')) {
-        panel.classList.toggle('accordion-active');
-        panel.classList.toggle('back');
-        panel.firstElementChild.lastElementChild.classList.toggle(
+        addActive(panel);
+        removeActive(index);
+      }
+    });
+  });
+
+  const addActive = (panel) => {
+    panel.classList.toggle('accordion-active');
+    panel.classList.toggle('back');
+    panel.firstElementChild.lastElementChild.classList.toggle('round--opened');
+    panel.firstElementChild.lastElementChild.lastElementChild.classList.toggle(
+      'round__arrow--up'
+    );
+  };
+
+  function removeActive(index1) {
+    accordionPanel.forEach((item, index2) => {
+      if (accordionPanel[index1] !== accordionPanel[index2]) {
+        item.classList.remove('accordion-active');
+        item.classList.remove('back');
+        item.firstElementChild.lastElementChild.classList.remove(
           'round--opened'
         );
-        panel.firstElementChild.lastElementChild.lastElementChild.classList.toggle(
+        item.firstElementChild.lastElementChild.lastElementChild.classList.remove(
           'round__arrow--up'
         );
       }
     });
-  });
+  }
 };
 
 export default accordion;
