@@ -87,8 +87,8 @@
   height: 0;
   visibility: hidden;
   opacity: 0;
-  transition: all .5s ease;
-  
+  transition: all 0.5s ease;
+
   &-content {
     padding: 17px 0 0 35px;
     justify-content: space-around;
@@ -96,8 +96,8 @@
     width: 339px;
     height: 165px;
   }
-  
-  &-title p{
+
+  &-title p {
     font-size: 16px;
     line-height: 40px;
     letter-spacing: 0.05em;
@@ -109,12 +109,28 @@
     letter-spacing: 0.05em;
     color: #717171;
   }
+  &-link {
+    display: flex;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 13px;
+    border: 1px solid #e06733;
+    border-radius: 5px;
+    width: 122px;
+    height: 26px;
+    margin: 0 auto;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inika", sans-serif;
+    color: #717171;
+  }
 }
 
 .visible {
   visibility: visible;
   opacity: 1;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   height: 214px;
 }
 .card__wrapper {
