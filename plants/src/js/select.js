@@ -29,7 +29,6 @@ export const select = () => {
   }
 
   const displayCard = (targetId) => {
-    console.log(targetId);
     addressCards.forEach((item) => {
       if (item.classList.contains(targetId)) {
         item.classList.add('visible');

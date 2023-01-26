@@ -1,4 +1,4 @@
-const accordion = () => {
+export const accordion = () => {
   const accordionPanel = document.querySelectorAll('.accordion__panel');
 
   accordionPanel.forEach((panel, index) => {
@@ -35,4 +35,3 @@ const accordion = () => {
   }
 };
 
-export default accordion;
