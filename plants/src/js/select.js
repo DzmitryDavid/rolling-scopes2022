@@ -2,7 +2,7 @@ export const select = () => {
   const selectHeader = document.querySelectorAll('.select__header');
   const selectItem = document.querySelectorAll('.select__item');
   const addressCards = document.querySelectorAll('.adress__card');
-
+  const round = document.querySelector('.round__select');
   selectHeader.forEach((item) => {
     item.addEventListener('click', selectToggle);
   });
@@ -17,6 +17,7 @@ export const select = () => {
 
   function selectToggle() {
     this.parentElement.classList.toggle('select-active');
+    round.classList.toggle('round__arrow--up')
   }
   function selectChoose(e) {
     let text = e.target.textContent;
@@ -24,6 +25,7 @@ export const select = () => {
     let currentText = select.querySelector('.select__current');
     currentText.textContent = text;
     select.classList.remove('select-active');
+    round.classList.remove('round__arrow--up');
   }
 
   const displayCard = (targetId) => {
