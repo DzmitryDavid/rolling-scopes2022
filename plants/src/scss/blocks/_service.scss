@@ -30,6 +30,12 @@
     width: 161px;
     height: 50px;
     text-transform: capitalize;
+    transition: all .3s ease-out;
+    &-active {
+      background-color:#e06733;
+      color: #fff;
+      transition: all .3s ease-out;
+    }
   }
   &__cards {
     margin-top: 9rem;
@@ -66,4 +72,15 @@
       color: $cardsubtitle-color;
     }
   }
+}
+.enabled {
+  opacity: 1;
+  cursor: pointer;
+  
+}
+.disabled {
+  opacity: 0.4;
+  cursor:default;
+  pointer-events: none;
+  
 }
