@@ -1,57 +1,76 @@
 export const filter = () => {
   const categoryBtns = document.querySelectorAll('.service__button');
   const cards = document.querySelectorAll('.service__card');
-  const arr = [];
+  let cardsArr = [];
+  let inactive = [];
+  cards.forEach((card) => cardsArr.push(card));
 
   categoryBtns.forEach((btn) => {
-    // console.log(btn);
     btn.addEventListener('click', (e) => {
       btn.classList.toggle('service__button-active');
       if (btn.classList.contains('service__button-active')) {
         addActive(e);
+      }
+      if (!btn.classList.contains('service__button-active')) {
+        removeActive(e);
         isActive();
       } else {
-        removeActive(e);
         isActive();
       }
     });
   });
 
   const isActive = () => {
-    const activeBtn = [];
+    const activeBtnArr = [];
     categoryBtns.forEach((btn) => {
       if (btn.classList.contains('service__button-active')) {
-        activeBtn.push(btn);
+        activeBtnArr.push(btn);
       }
 
-      if (activeBtn.length === 2) {
+      if (activeBtnArr.length === 2) {
         categoryBtns.forEach((btn) => {
           if (!btn.classList.contains('service__button-active')) {
             btn.classList.add('disabled');
           }
         });
       }
-      if (activeBtn.length < 2) {
+      if (activeBtnArr.length < 2) {
         btn.classList.remove('disabled');
       }
     });
   };
 
   const addActive = (e) => {
-    let targetId = e.target.dataset.id;
-    cards.forEach((card, index) => {
-      if (!card.classList.contains(targetId)) {
-        card.classList.add('blur');
-        arr.push(index);
-      }
+    cards.forEach((card) => {
+      card.classList.add('blur');
     });
+    let targetId = e.target.dataset.id;
+    inactive.push(
+      ...cardsArr.filter((item) => item.classList.contains(targetId))
+    );
+    inactive.forEach((item) => item.classList.remove('blur'));
   };
   const removeActive = (e) => {
-    arr.forEach((ind) => {
-      cards[ind].classList.remove('blur');
+    cards.forEach((card) => {
+      card.classList.add('blur');
     });
-    for (let i = 0; arr.length > i; arr.length - 1) {
-      arr.pop();
+    let targetId = e.target.dataset.id;
+    inactive = inactive.filter((item) => !item.classList.contains(targetId));
+    inactive.forEach((item) => item.classList.remove('blur'));
+    removeAllBlur();
+  };
+
+  const removeAllBlur = () => {
+    const btnArr = [];
+    categoryBtns.forEach((btn) => {
+      btnArr.push(btn);
+    });
+    if (
+      btnArr.every((item) => !item.classList.contains('service__button-active'))
+    ) {
+      cards.forEach((card) => {
+        card.classList.remove('blur');
+      });
     }
   };
 };
