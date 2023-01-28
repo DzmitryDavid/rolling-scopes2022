@@ -51,7 +51,7 @@
         <div class="header__logo">
           <span class="header__text">Plants</span>
         </div>
-        <div class="header__nav">
+        <nav class="header__nav">
           <ul class="nav">
             <li class="nav__item">
               <a class="nav__item-link nav__item-link--active" href="#welcome">Home</a>
@@ -69,7 +69,7 @@
               <a class="nav__item-link" href="#contacts">Contacts</a>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
     </div>
   </header>
@@ -118,14 +118,14 @@
           <div class="service__menu">
             <h2 class="service__title green">Service and our projects</h2>
             <div class="service__buttons">
-              <button class="service__button">Gardens</button>
-              <button class="service__button">Lawn</button>
-              <button class="service__button">Planting</button>
+              <button class="service__button" data-id="garden">Gardens</button>
+              <button class="service__button" data-id="lawn">Lawn</button>
+              <button class="service__button" data-id="planting">Planting</button>
             </div>
           </div>
 
           <div class="service__cards">
-            <div class="service__card">
+            <div class="garden service__card">
               <div class="service__card-img">
 
                 <img src="src/img/women1.jpg" alt="women image">
@@ -135,7 +135,7 @@
               </div>
               <div class="service__card-description">Lorem Ipsum has been the industry</div>
             </div>
-            <div class="service__card">
+            <div class="planting service__card">
               <div class="service__card-img">
                 <img src="src/img/lemon.jpg" alt="Planting image">
               </div>
@@ -144,7 +144,7 @@
               </div>
               <div class="service__card-description">Lorem Ipsum has been the industry</div>
             </div>
-            <div class="service__card">
+            <div class="lawn service__card">
               <div class="service__card-img">
                 <img src="src/img/lawncare.jpg" alt="Lawn care image">
               </div>
@@ -153,7 +153,7 @@
               </div>
               <div class="service__card-description">Lorem Ipsum has been the industry</div>
             </div>
-            <div class="service__card">
+            <div class="planting service__card">
               <div class="service__card-img">
                 <img src="src/img/women2.jpg" alt="women image">
               </div>
@@ -162,7 +162,7 @@
               </div>
               <div class="service__card-description">Lorem Ipsum has been the industry</div>
             </div>
-            <div class="service__card">
+            <div class="garden service__card">
               <div class="service__card-img">
                 <img src="src/img/gardencare.jpg" alt="Garden care image">
               </div>
@@ -171,7 +171,7 @@
               </div>
               <div class="service__card-description">Lorem Ipsum has been the industry</div>
             </div>
-            <div class="service__card">
+            <div class="planting service__card">
               <div class="service__card-img">
                 <img src="src/img/planting.jpg" alt="Planting image">
               </div>
@@ -192,93 +192,76 @@
           <div class="prices__accordion">
 
             <div class="accordion__wrapper">
-              <button class="accordion__button">Basics
-                <span class="round">
-                  <svg class="round__arrow" width="6" height="4" viewBox="0 0 6 4" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.00003 3.00656L1.00003 1.00667" stroke="#717171" stroke-width="0.5"
-                      stroke-linecap="round" />
-                    <path d="M3 3.00635L5 1.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round" />
-                  </svg>
-                </span>
-              </button>
+
               <div class="accordion__panel">
                 <div class="accordion__panel-title">Basics
-                  <div class="round round--opened">
-                    <svg class="round__arrow round__arrow--up" width="6" height="4" viewBox="0 0 6 4" fill="none"
+                  <span class="round">
+                    <svg class="round__arrow" width="6" height="4" viewBox="0 0 6 4" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <path d="M3.00003 3.00656L1.00003 1.00667" stroke="#717171" stroke-width="0.5"
                         stroke-linecap="round" />
                       <path d="M3 3.00635L5 1.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
-                <div class="divider"></div>
-                <div class="accordion__panel-description">Release of Letraset sheets containing Lorem Ipsum passages,
-                  and more recently</div>
-                <div class="accordion__panel-price"><span>$15</span> / per hour</div>
-                <button class="accordion__panel-button">Order</button>
+                <div class="accordion__content">
+                  <div class="divider"></div>
+                  <div class="accordion__panel-description">Release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently</div>
+                  <div class="accordion__panel-price"><span>$15</span> / per hour</div>
+                  <a href="#contacts" class="accordion__panel-button">
+                    Order
+                  </a>
+                </div>
               </div>
 
-              <button class="accordion__button">Standard
-                <span class="round">
-                  <svg class="round__arrow" width="6" height="4" viewBox="0 0 6 4" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.00003 3.00656L1.00003 1.00667" stroke="#717171" stroke-width="0.5"
-                      stroke-linecap="round" />
-                    <path d="M3 3.00635L5 1.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round" />
-                  </svg>
-                </span>
-              </button>
               <div class="accordion__panel">
                 <div class="accordion__panel-title">Standard
-                  <div class="round round--opened">
-                    <svg class="round__arrow round__arrow--up" width="6" height="4" viewBox="0 0 6 4" fill="none"
+                  <span class="round">
+                    <svg class="round__arrow" width="6" height="4" viewBox="0 0 6 4" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <path d="M3.00003 3.00656L1.00003 1.00667" stroke="#717171" stroke-width="0.5"
                         stroke-linecap="round" />
                       <path d="M3 3.00635L5 1.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round" />
                     </svg>
-                  </div>
+                  </span>
+
                 </div>
-                <div class="divider"></div>
-                <div class="accordion__panel-description">Release of Letraset sheets containing Lorem Ipsum passages,
-                  and more recently</div>
-                <div class="accordion__panel-price"><span>$25</span> / per hour</div>
-                <button class="accordion__panel-button">Order</button>
+                <div class="accordion__content">
+                  <div class="divider"></div>
+                  <div class="accordion__panel-description">Release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently</div>
+                  <div class="accordion__panel-price"><span>$25</span> / per hour</div>
+                  <a href="#contacts" class="accordion__panel-button">
+                    Order
+                  </a>
+                </div>
               </div>
-
-              <button class="accordion__button">Pro care
-                <span class="round">
-                  <svg class="round__arrow" width="6" height="4" viewBox="0 0 6 4" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.00003 3.00656L1.00003 1.00667" stroke="#717171" stroke-width="0.5"
-                      stroke-linecap="round" />
-                    <path d="M3 3.00635L5 1.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round" />
-                  </svg>
-                </span>
-              </button>
-
               <div class="accordion__panel">
                 <div class="accordion__panel-title">Pro care
-                  <div class="round round--opened">
-                    <svg class="round__arrow round__arrow--up" width="6" height="4" viewBox="0 0 6 4" fill="none"
+                  <span class="round">
+                    <svg class="round__arrow" width="6" height="4" viewBox="0 0 6 4" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <path d="M3.00003 3.00656L1.00003 1.00667" stroke="#717171" stroke-width="0.5"
                         stroke-linecap="round" />
                       <path d="M3 3.00635L5 1.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
-                <div class="divider"></div>
-                <div class="accordion__panel-description">Release of Letraset sheets containing Lorem Ipsum passages,
-                  and more recently</div>
-                <div class="accordion__panel-price"><span>$35</span> / per hour</div>
-                <button class="accordion__panel-button">Order</button>
+                <div class="accordion__content">
+                  <div class="divider"></div>
+                  <div class="accordion__panel-description">Release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently</div>
+                  <div class="accordion__panel-price"><span>$35</span> / per hour</div>
+                  <a href="#contacts" class="accordion__panel-button">
+                    Order
+                  </a>
+                </div>
               </div>
 
             </div>
           </div>
+
           <div class="prices__gardeners">
             <h2 class="prices__gardeners-title">Our best <span class="green">gardeners</span> are
               ready to help
@@ -291,6 +274,8 @@
         </div>
       </div>
 
+      </div>
+      </div>
     </section>
 
     <section id="contacts" class="contacts">
@@ -308,16 +293,91 @@
                   <path d="M3 3.00635L5 1.00635" stroke="#fff" stroke-width="0.5" stroke-linecap="round" />
                 </svg>
               </div>
-              <select name="city" id="select" class="contacts__select">
-                <option value="city">City</option>
-                <option value="Canandaigua">Canandaigua, NY</option>
-                <option value="New York">New York City</option>
-              </select>
+
+              <div id="select" class="select">
+                <div class="select__header">
+                  <span class="select__current">City</span>
+                </div>
+                <div class="select__body">
+                  <div class="select__item" data-id="canandaigua">Canandaigua, NY</div>
+                  <div class="select__item" data-id="ny">New York City</div>
+                  <div class="select__item" data-id="yonkers">Yonkers, NY</div>
+                  <div class="select__item" data-id="sherrill">Sherrill, NY</div>
+                </div>
+              </div>
+            </div>
+            <div class="card__wrapper">
+              <div class="adress__card canandaigua">
+                <div class="adress__card-content">
+                  <div class="adress__card-title">
+                    <p class="adress__card-office">City:</p>
+                    <p class="adress__card-phone">Phone:</p>
+                    <p class="adress__card-office">Office adress:</p>
+                  </div>
+                  <div class="adress__card-description">
+                    <p>Canandaigua, NY</p>
+                    <p>+1 585 393 0001</p>
+                    <p>151 Charlotte Street</p>
+                  </div>
+                </div>
+                <a href="tel:+1 585 393 0001" class="adress__card-link">Call us</a>
+              </div>
+              <div class="adress__card ny">
+                <div class="adress__card-content">
+                  <div class="adress__card-title">
+                    <p class="adress__card-office">City:</p>
+                    <p class="adress__card-phone">Phone:</p>
+                    <p class="adress__card-office">Office adress:</p>
+                  </div>
+                  <div class="adress__card-description">
+                    <p>New York City</p>
+                    <p>+1 212 456 0002</p>
+                    <p>9 East 91st Street</p>
+                  </div>
+                </div>
+                <a href="tel:+1 212 456 0002" class="adress__card-link">Call us</a>
+              </div>
+              <div class="adress__card yonkers">
+                <div class="adress__card-content">
+                  <div class="adress__card-title">
+                    <p class="adress__card-office">City:</p>
+                    <p class="adress__card-phone">Phone:</p>
+                    <p class="adress__card-office">Office adress:</p>
+                  </div>
+                  <div class="adress__card-description">
+                    <p>Yonkers, NY</p>
+                    <p>+1 914 678 0003</p>
+                    <p>511 Warburton Ave</p>
+                  </div>
+
+                </div>
+                <a href="tel:+1 914 678 0003" class="adress__card-link">Call us</a>
+              </div>
+              <div class="adress__card sherrill">
+                <div class="adress__card-content">
+                  <div class="adress__card-title">
+                    <p class="adress__card-office">City:</p>
+                    <p class="adress__card-phone">Phone:</p>
+                    <p class="adress__card-office">Office adress:</p>
+                  </div>
+                  <div class="adress__card-description">
+                    <p>Sherrill, NY</p>
+                    <p>+1 315 908 0004</p>
+                    <p>14 WEST Noyes BLVD</p>
+                  </div>
+
+                </div>
+                <a href="tel:+1 315 908 0004" class="adress__card-link">Call us</a>
+
+              </div>
             </div>
 
+
+            <!-- wrapper -->
           </div>
+
+
         </div>
-      </div>
     </section>
   </main>
   <footer class="footer">
@@ -380,7 +440,7 @@
     </div>
   </footer>
 
-  <script src="src/js/index.js"></script>
+  <script type="module" src="src/js/index.js"></script>
 </body>
 
 </html>

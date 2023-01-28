@@ -1,7 +1,10 @@
-console.log(
-  '1.Вёрстка соответствует макету. Ширина экрана 768px +24\n 2.Вёрстка соответствует макету. Ширина экрана 380px +24\n 3.Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки.+15 \n 4.На ширине экрана 380рх и меньше реализовано адаптивное меню +22'
-);
 
+import {accordion} from  './accordion.js';
+import {select} from  './select.js';
+import {filter} from  './filter.js';
+accordion();
+select();
+filter();
 const burgerEl = document.querySelector('.hamburger');
 const menuEl = document.querySelector('.menu');
 const menuCloseEl = document.querySelector('.menu__close');
@@ -13,3 +16,4 @@ const hideMenu = () => {
 }
 burgerEl.addEventListener('click', openMenu);
 menuCloseEl.addEventListener('click', hideMenu);
+console.log('1.При нажатии на кнопки:Gargens,Lawn,Planting происходит смена фокуса на услугах в разделе service +50\n2.Accordion в секции prices реализация 3-х выпадающих списков об услугах и ценах + 50\n3.В разделе contacts реализован select с выбором городов +25');
