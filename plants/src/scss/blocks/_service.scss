@@ -6,7 +6,7 @@
     padding: $wrapper-padding;
   }
   &__menu {
-    width: 1007px;
+    width: 82.5%;
     height: 9.4rem;
     display: flex;
     align-items: center;
@@ -42,8 +42,8 @@
     display: grid;
     grid-template-rows: 450px 450px;
     grid-template-columns: repeat(3, 330px);
-    gap: 11.6rem;
-    row-gap: 55px;
+    gap: 9.5%;
+    row-gap: 6%;
   }
   &__card {
     overflow: hidden;
