@@ -15,30 +15,34 @@ let photoArray = [];
 async function getPhotos() {
   try {
     const response = await fetch(unsplashApi);
-    photoArray = await response.json();
+    photoArray.push(await response.json());
+    console.log(photoArray[0]);
+
   } catch (error) {
     console.log(error);
   }
 }
 
 getPhotos();
-
-const nextPhoto = async () => {
-  slideIndex++;
-  if (slideIndex >= photoArray.length - 1) {
+const nextPhoto = () => {
+  setTimeout(() =>  {
+    slideIndex++;
+  if (slideIndex >= photoArray[0].length - 1) {
     slideIndex = 0;
   }
   bodyEl.style.backgroundImage = `url(${
-    photoArray[slideIndex].urls.raw + '&w=1980&h=1080'
+    photoArray[0][slideIndex].urls.raw + '&w=1980&h=1080'
   })`;
+  },500)
+  
 };
-const prevPhoto = async () => {
+const prevPhoto = () => {
   slideIndex--;
   if (slideIndex < 0) {
-    slideIndex = photoArray.length - 1;
+    slideIndex = photoArray[0].length - 1;
   }
   bodyEl.style.backgroundImage = `url(${
-    photoArray[slideIndex].urls.raw + '&w=1980&h=1080'
+    photoArray[0][slideIndex].urls.raw + '&w=1980&h=1080'
   })`;
 };
 

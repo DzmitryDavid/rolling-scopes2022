@@ -251,6 +251,7 @@ body {
 }
 
 .greeting-container {
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: stretch;
@@ -270,12 +271,14 @@ body {
   flex: 1;
   max-width: 50%;
   padding: 10px;
-  font-size: 40px;
+  font-size: 50px;
   text-align: left;
   color: #fff;
   background-color: transparent;
   border: 0;
   outline: 0;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
 .name::placeholder {
@@ -295,7 +298,7 @@ body {
 }
 
 .change-quote {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   background-image: url("../assets/svg/reload.svg");
 }
 
@@ -304,6 +307,7 @@ body {
   font-size: 25px;
 }
 #quote {
+  font-size: 16px;
   padding: 0 0.3rem 0 0.3rem;
 }
 
