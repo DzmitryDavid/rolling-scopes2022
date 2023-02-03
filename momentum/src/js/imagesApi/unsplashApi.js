@@ -25,7 +25,7 @@ async function getPhotos() {
 
 getPhotos();
 const nextPhoto = () => {
-  setTimeout(() =>  {
+  
     slideIndex++;
   if (slideIndex >= photoArray[0].length - 1) {
     slideIndex = 0;
@@ -33,7 +33,7 @@ const nextPhoto = () => {
   bodyEl.style.backgroundImage = `url(${
     photoArray[0][slideIndex].urls.raw + '&w=1980&h=1080'
   })`;
-  },500)
+  
   
 };
 const prevPhoto = () => {

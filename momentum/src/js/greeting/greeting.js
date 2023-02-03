@@ -1,4 +1,4 @@
-export const greeting = () => {
+const greeting = () => {
   const greetingEl = document.querySelector('.greeting');
   const nameInput = document.querySelector('.name');
 
@@ -18,29 +18,39 @@ export const greeting = () => {
       nameInput.value = localStorage.getItem('name');
     }
   };
-
-  const setGreetingTime = () => {
+  const getTimeOfDay = () => {
     let today = new Date();
     let hour = today.getHours();
-
+    let currentTime = '';
     if (hour > 6 && hour < 12) {
-      greetingEl.textContent = 'Good morning,';
+      currentTime = 'morning';
     } else if (hour >= 12 && hour < 18) {
-      greetingEl.textContent = 'Good afternoon,';
+      currentTime = 'afternoon';
     } else if (hour >= 18 && hour < 24) {
-      greetingEl.textContent = 'Good evening,';
+      currentTime = 'evening';
     } else {
-      greetingEl.textContent = 'Good night,';
+      currentTime = 'night';
     }
+
+    return currentTime;
   };
-  setGreetingTime();
+  
+  const setGreetingTime = () => {
+    const currentTime = getTimeOfDay();
+    let greetingPhrase = `Good ${currentTime}`;
+    greetingEl.textContent = greetingPhrase;
+  };
 
   const clearInput = (e) => {
     if (localStorage.getItem('name') === null) {
       e.target.value = '';
     }
   };
+
+  setGreetingTime();
   nameInput.addEventListener('change', setInput);
   nameInput.addEventListener('click', clearInput);
   window.addEventListener('load', checkStorage);
+  return getTimeOfDay
 };
+export default greeting;

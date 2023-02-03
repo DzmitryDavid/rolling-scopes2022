@@ -6,7 +6,6 @@ export const clock = () => {
     const date = new Date();
     const options = { hour: '2-digit', minute: '2-digit', second: '2-digit'};
     let currentTime = date.toLocaleTimeString('en-Gb',options)
-    console.log(currentTime);
     timeEl.textContent = currentTime;
   },1000),
   
