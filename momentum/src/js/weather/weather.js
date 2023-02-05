@@ -1,4 +1,4 @@
-ggconst apiKey = '0c5b3d16dc85bdf8bea6b96976954874';
+const apiKey = '0c5b3d16dc85bdf8bea6b96976954874';
 export const weather = () => {
   const weatherIcon = document.querySelector('.weather-icon');
   const tempEl = document.querySelector('.temperature');
