@@ -1,5 +1,4 @@
 const apiKey = '0c5b3d16dc85bdf8bea6b96976954874';
-// http://api.openweathermap.org/data/2.5/weather?q=Минск&lang=ru&appid=${apiKey}&units=metric`
 export const weather = () => {
   const weatherIcon = document.querySelector('.weather-icon');
   const tempEl = document.querySelector('.temperature');
