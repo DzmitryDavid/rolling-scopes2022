@@ -7,15 +7,16 @@ export const weather = () => {
   const windEl = document.querySelector('.wind');
   const humidityEl = document.querySelector('.humidity');
 
-  const setCity = (e) => {
+  const setCity = () => {
     const value = cityInput.value;
-    console.log('click');
     cityInput.blur();
+    const iconStr = weatherIcon.classList.value.slice(-7);
+    weatherIcon.classList.remove(iconStr);
     getWeather(value);
   };
-  async function getWeather(city) {
+
+  async function getWeather(city = 'Minsk') {
     try {
-      console.log(city);
       const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&units=metric&appid=${apiKey}`;
       const res = await fetch(url);
       const data = await res.json();
@@ -24,7 +25,7 @@ export const weather = () => {
       }
       weatherIcon.classList.add(`owf-${data.weather[0].id}`);
       weatherIcon.textContent = cityInput.value;
-      tempEl.textContent = `${data.main.temp}°C`;
+      tempEl.textContent = `temperature ${data.main.temp}°C`;
       descrEl.textContent = data.weather[0].description;
       windEl.textContent = `Wind speed: ${data.wind.speed} m/s`;
       humidityEl.textContent = `Humidity: ${data.main.humidity}%`;
@@ -32,6 +33,6 @@ export const weather = () => {
       weatherIcon.textContent = error.message;
     }
   }
-  setCity();
+  getWeather();
   cityInput.addEventListener('change', setCity);
 };
