@@ -20,7 +20,7 @@ body {
   background-size: cover;
   background-color:rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
-  transition: background-image 0.6s ease-in-out;
+  transition: background-image 0.8s ease-in-out;
 }
 
 
@@ -160,22 +160,35 @@ body {
   background-image: url("../assets/svg/play-next.svg");
 }
 
-.weather {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  row-gap: 10px;
-  /* width: 180px; */
-  min-height: 180px;
-  text-align: left;
-
-}
 
 .weather-error {
-  margin-top: -10px;
-}
+  margin-top: 10px;
+  visibility: hidden;
+  height: 0;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  font-size: 20px;
+  text-transform: capitalize;
 
+}
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+.weather-container--hidden {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+}
+.weather-error--visible {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
 .description-container {
   display: flex;
   flex-wrap: wrap;

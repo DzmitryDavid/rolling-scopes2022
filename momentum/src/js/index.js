@@ -11,3 +11,5 @@ clock();
 greeting();
 setPicture();
 weather();
+
+console.log()
