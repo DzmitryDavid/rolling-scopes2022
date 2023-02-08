@@ -12,10 +12,10 @@ export const weather = () => {
   const setCity = () => {
     const value = cityInput.value;
     cityInput.blur();
-    const iconStr = weatherIconEl.classList.value.slice(-7);
-    weatherIconEl.classList.remove(iconStr);
+    
     getWeather(value);
   };
+  
 
   async function getWeather(city = 'Minsk') {
     try {
@@ -27,15 +27,18 @@ export const weather = () => {
         weatherErrorEl.textContent = data.message;
         weatherContainerEl.classList.add('weather-container--hidden');
       }
-      if (!data.message) {
+      if (res.status === 200) {
+        
         weatherErrorEl.classList.remove('weather-error--visible');
         weatherContainerEl.classList.remove('weather-container--hidden');
+        
 
         weatherIconEl.classList.add(`owf-${data.weather[0].id}`);
         tempEl.textContent = `temperature ${Math.floor(data.main.temp)}°C`;
         descrEl.textContent = data.weather[0].description;
         windEl.textContent = `Wind speed: ${Math.floor(data.wind.speed)} m/s`;
         humidityEl.textContent = `Humidity: ${data.main.humidity}%`;
+        
       }
     } catch (error) {
       console.log(error);

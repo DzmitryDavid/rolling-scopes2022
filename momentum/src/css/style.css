@@ -78,6 +78,7 @@ body {
 }
 .play-list {
   text-align: left;
+  z-index: 10;  
 }
 
 .play-item {
