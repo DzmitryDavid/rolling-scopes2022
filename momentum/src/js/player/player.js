@@ -14,6 +14,7 @@ export const player = () => {
   const currentTimeElement = document.querySelector('#current-time');
   const durationElement = document.querySelector('#duration');
   const playListElement = document.querySelector('.play-list');
+  const volumeInput = document.querySelector('.progress__volume');
 
   let isPlaying = false;
   let songIndex = 0;
@@ -116,12 +117,29 @@ export const player = () => {
     progressBar.style.width = `${progressBarWidth}%`;
   }
 
+  const changeVolume = () => {
+    console.log('change')
+    // showVolume.value = volumeInput.value;
+    audio.volume = volumeInput.value / 100;
+  }
+  const muteSound = () => {
+
+    audio.volume = 0;
+    volumeInput.value = 0;
+  }
+  const maxSound = () => {
+    audio.volume = 1;
+    volumeInput.value = 100;
+  }
+
   nextBtn.addEventListener('click', nextSong);
   prevBtn.addEventListener('click', prevSong);
   audio.addEventListener('timeupdate', updateProgressBar);
   audio.addEventListener('ended', nextSong);
   progressContainer.addEventListener('click', setProgressBar);
-
+  volumeInput.addEventListener("change", changeVolume);
+  document.querySelector('.volume-down').addEventListener('click', muteSound)
+  document.querySelector('.volume-up').addEventListener('click', maxSound)
   loadSong(playlist[songIndex]);
   setPlaylist()
 

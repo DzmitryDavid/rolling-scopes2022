@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="assets/favicon.ico" rel="shortcut icon" />
   <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" />
   <title>Momentum</title>
 </head>
@@ -20,6 +21,20 @@
         <button class="play-next player-icon"></button>
       </div>
       <audio src="./assets/sounds/Aqua Caelestis.mp3"></audio>
+      <div class="volume">
+        <!-- <i class="fa-solid fa-volume-xmark"></i> -->
+        
+        
+        <div class="volume-down">
+          <i class="fa-solid fa-volume-low"></i>
+        </div>
+        <div class="input__wrapper">
+        <input type="range" class="progress__volume"></input>
+        </div>
+        <div class="volume-up">
+          <i class="fa-solid fa-volume-high"></i>
+        </div>
+      </div>
       <div class="progress__container">
         <div id="progress" class="progress"></div>
         <div class="duration__wrapper">

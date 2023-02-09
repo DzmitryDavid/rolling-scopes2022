@@ -5,11 +5,11 @@ import greeting  from './greeting/greeting.js';
 import { setPicture } from './imagesApi/githubApi.js';
 import { weather } from './weather/weather.js';
 
+setPicture();
 player();
 getQuotes();
 clock();
 greeting();
-setPicture();
 weather();
 
 console.log()

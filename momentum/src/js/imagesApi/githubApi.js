@@ -16,7 +16,7 @@ export const setPicture = () => {
     img.src = `https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${currentDayTime}/${randomNum}.webp`;
 
     img.onload = () => {
-      bodyEl.style.background = `url('https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${currentDayTime}/${randomNum}.webp')`;
+      bodyEl.style.backgroundImage = `url('${img.src}')`;
     };
   };
   setBg();
@@ -31,7 +31,7 @@ export const setPicture = () => {
     img.src = `https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${currentDayTime}/${slideIndex}.webp`;
 
     img.onload = () => {
-      bodyEl.style.background = `url('${img.src}')`;
+      bodyEl.style.backgroundImage = `url('${img.src}')`;
     };
   };
 
@@ -44,7 +44,7 @@ export const setPicture = () => {
     slideIndex = slideIndex.toString().padStart(2, 0);
     img.src = `https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${currentDayTime}/${slideIndex}.webp`;
     img.onload = () => {
-      bodyEl.style.background = `url('${img.src}')`;
+      bodyEl.style.backgroundImage = `url('${img.src}')`;
     };
   };
 
