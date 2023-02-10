@@ -15,16 +15,25 @@ export const player = () => {
   const durationElement = document.querySelector('#duration');
   const playListElement = document.querySelector('.play-list');
   const volumeInput = document.querySelector('.progress__volume');
+  const volumeDownBtn = document.querySelector('.volume-down')
 
   let isPlaying = false;
   let songIndex = 0;
+  let isMute = false
+
+
   const setPlaylist = () => {
     playlist.forEach((song) => {
       const songEl = document.createElement('li');
       songEl.classList.add('play-item')
       songEl.textContent = song.title;
       playListElement.appendChild(songEl);
-      songEl.addEventListener('click' , () => {
+      
+      songEl.addEventListener('click' , (e) => {
+        document.querySelectorAll('.play-item').forEach((item) => {
+          item.style.color = '#fff'
+        })
+        e.target.style.color =  'hsla(256, 37%, 68%, 0.95)'
         loadSong(song);
         playSong()
       })
@@ -49,12 +58,11 @@ export const player = () => {
   });
 
   const loadSong = (song) => {
+  
     songTitle.textContent = song.title;
     // songAuthor.textContent = song.author;
     audio.src = song.src;
-    if(isPlaying) {
-
-    }
+    
   };
 
   const nextSong = () => {
@@ -121,13 +129,14 @@ export const player = () => {
     audio.volume = volumeInput.value / 100;
   }
   const muteSound = () => {
-
     audio.volume = 0;
     volumeInput.value = 0;
+    isMute = !isMute
   }
   const maxSound = () => {
     audio.volume = 1;
-    volumeInput.value = 100;
+    volumeInput.value = 50;
+    isMute = !isMute
   }
 
   nextBtn.addEventListener('click', nextSong);
@@ -135,9 +144,11 @@ export const player = () => {
   audio.addEventListener('timeupdate', updateProgressBar);
   audio.addEventListener('ended', nextSong);
   progressContainer.addEventListener('click', setProgressBar);
-  volumeInput.addEventListener("change", changeVolume);
-  document.querySelector('.volume-down').addEventListener('click', muteSound)
-  document.querySelector('.volume-up').addEventListener('click', maxSound)
+  volumeInput.addEventListener("input", changeVolume);
+  volumeDownBtn.addEventListener('click', () => {
+    isMute ? maxSound() : muteSound()
+  })
+  
   loadSong(playlist[songIndex]);
   setPlaylist()
 
