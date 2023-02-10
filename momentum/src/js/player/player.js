@@ -118,8 +118,6 @@ export const player = () => {
   }
 
   const changeVolume = () => {
-    console.log('change')
-    // showVolume.value = volumeInput.value;
     audio.volume = volumeInput.value / 100;
   }
   const muteSound = () => {

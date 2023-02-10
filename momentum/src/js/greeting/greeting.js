@@ -1,4 +1,8 @@
-const greeting = () => {
+const greeting = (lang) => {
+  const greetingTranslation = {
+    rusLang: `Добрый`,
+    engLang: `Good`
+  }
   const greetingEl = document.querySelector('.greeting');
   const nameInput = document.querySelector('.name');
 
