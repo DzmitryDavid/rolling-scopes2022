@@ -9,7 +9,6 @@
   padding: 0;
 }
 
-
 body {
   min-width: 480px;
   min-height: 100vh;
@@ -40,7 +39,12 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  transition: all .5s ease;
+  opacity: 0;
+  visibility: hidden;
+  
 }
+
 .player__title,
 .player__artist {
   margin-top: 5px;
@@ -87,15 +91,13 @@ body {
   list-style: none;
   opacity: 0.8;
   cursor: pointer;
-  transition: 0.3s; 
+  transition: 0.3s;
 }
 
 .play-item:hover {
   opacity: 1;
   color: hsla(256, 37%, 68%, 0.95);
 }
-
-
 
 .item-active::before {
   color: #c5b358;
@@ -131,6 +133,14 @@ body {
   border: 0;
   outline: 0;
   transform: scale(1.1);
+}
+.player__btn {
+  position: absolute;
+  top: 20px ;
+  left: 20px;
+  width: 40px;
+  height : 40px;
+  cursor: pointer;
 }
 
 .play {
@@ -174,14 +184,13 @@ body {
   width: 150px;
   height: 10px;
 }
-.volume-down
-{
+.volume-down {
   margin-top: -8px;
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
-.volume-up  {
+.volume-up {
   margin-top: -8px;
   width: 15px;
   height: 15px;
@@ -206,7 +215,11 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   outline: none;
 }
-
+.weather {
+  visibility: hidden;
+  opacity: 0;
+  
+}
 .weather-error {
   margin-top: 10px;
   visibility: hidden;
@@ -465,7 +478,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 30px;
 }
 .todo-list {
-  padding: 1rem; 
+  padding: 1rem;
 }
 .list-item {
   margin-bottom: 15px;
@@ -476,6 +489,11 @@ input[type="range"]::-webkit-slider-thumb {
   justify-content: space-between;
 }
 .remove__btn {
-  cursor:pointer;
-
+  cursor: pointer;
+}
+.show {
+  opacity: 1;
+  visibility: visible;
+  transition: all .5s ease;
+  height: auto; 
 }

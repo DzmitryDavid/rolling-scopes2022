@@ -1,50 +1,42 @@
 // emLiqi2hyqdsbLvCwLzdzsZq3IVd3bm_huylULtD4EQ
 //e2077ad31a806c894c460aec8f81bc2af4d09c4f8104ae3177bb809faf0eac17
-const slideBtnPrev = document.querySelector('.slide-prev');
-const slideBtnNext = document.querySelector('.slide-next');
-const bodyEl = document.querySelector('body');
 
-let slideIndex = 0;
-const count = 10;
-const apiKey =
-  'e2077ad31a806c894c460aec8f81bc2af4d09c4f8104ae3177bb809faf0eac17';
-const unsplashApi = `https://api.unsplash.com/photos/random/?orientation=landscape&query=nature&client_id=${apiKey}&count=${count}`;
+//flick key 8263545a51b704ffbafdf5fce5e4cccb
+//secret 5ae45e020227ebb5
+import greeting from '../greeting/greeting.js';
 
-let photoArray = [];
+export const unsplashPicture = () => {
+  const slideBtnPrev = document.querySelector('.slide-prev');
+  const slideBtnNext = document.querySelector('.slide-next');
+  const bodyEl = document.querySelector('body');
 
-async function getPhotos() {
-  try {
-    const response = await fetch(unsplashApi);
-    photoArray.push(await response.json());
-    console.log(photoArray[0]);
+  let currentDayTime = greeting()();
 
-  } catch (error) {
-    console.log(error);
+  const count = 1;
+  const apiKey = 'emLiqi2hyqdsbLvCwLzdzsZq3IVd3bm_huylULtD4EQ';
+  const unsplashApi = `https://api.unsplash.com/photos/random/?orientation=landscape&query=${currentDayTime}&client_id=${apiKey}&count=${count}`;
+
+  async function getPhotos() {
+    try {
+      const response = await fetch(unsplashApi);
+      const data = await response.json();
+      const img = new Image();
+      img.src = data[0].urls.regular;
+      img.onload = () => {
+        bodyEl.style.backgroundImage = `url('${data[0].urls.regular}'`;
+      };
+    } catch (error) {
+      console.log(error);
+    }
   }
-}
 
-getPhotos();
-const nextPhoto = () => {
-  
-    slideIndex++;
-  if (slideIndex >= photoArray[0].length - 1) {
-    slideIndex = 0;
-  }
-  bodyEl.style.backgroundImage = `url(${
-    photoArray[0][slideIndex].urls.raw + '&w=1980&h=1080'
-  })`;
-  
-  
+  const nextPhoto = () => getPhotos();
+
+  const prevPhoto = async () => {
+    await getPhotos();
+  };
+
+  getPhotos();
+  slideBtnNext.addEventListener('click', nextPhoto);
+  slideBtnPrev.addEventListener('click', prevPhoto);
 };
-const prevPhoto = () => {
-  slideIndex--;
-  if (slideIndex < 0) {
-    slideIndex = photoArray[0].length - 1;
-  }
-  bodyEl.style.backgroundImage = `url(${
-    photoArray[0][slideIndex].urls.raw + '&w=1980&h=1080'
-  })`;
-};
-
-slideBtnNext.addEventListener('click', nextPhoto);
-slideBtnPrev.addEventListener('click', prevPhoto);

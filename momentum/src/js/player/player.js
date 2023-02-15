@@ -1,10 +1,11 @@
 import { playlist } from './playlist.js';
 
 export const player = () => {
+  const playerEl = document.querySelector('.player') 
   const audio = document.querySelector('audio');
   const playBtn = document.querySelector('.play');
+  const showPlayerBtn = document.querySelector('.player__btn');
 
-  // const pauseBtn = document.querySelector('.play-pause');
   const prevBtn = document.querySelector('.play-prev');
   const nextBtn = document.querySelector('.play-next');
   const songTitle = document.querySelector('.player__title');
@@ -139,6 +140,10 @@ export const player = () => {
     isMute = !isMute
   }
 
+  const showPlayer = () => {
+    playerEl.classList.toggle('show')
+  }
+
   nextBtn.addEventListener('click', nextSong);
   prevBtn.addEventListener('click', prevSong);
   audio.addEventListener('timeupdate', updateProgressBar);
@@ -148,6 +153,8 @@ export const player = () => {
   volumeDownBtn.addEventListener('click', () => {
     isMute ? maxSound() : muteSound()
   })
+
+  showPlayerBtn.addEventListener('click', showPlayer )
   
   loadSong(playlist[songIndex]);
   setPlaylist()
