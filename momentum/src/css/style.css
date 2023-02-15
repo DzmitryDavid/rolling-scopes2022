@@ -218,7 +218,15 @@ input[type="range"]::-webkit-slider-thumb {
 .weather {
   visibility: hidden;
   opacity: 0;
-  
+
+}
+.weather__btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  cursor: pointer;
+
 }
 .weather-error {
   margin-top: 10px;
@@ -416,12 +424,14 @@ input[type="range"]::-webkit-slider-thumb {
   bottom: 50px;
   right: 50px;
   border-radius: 5px;
-  background-color: hsl(0 0% 6% / 0.925);
-  opacity: 0.8;
+  background-color: hsl(0 0% 6% / 0.825);
   min-width: 330px;
   min-height: 200px;
   text-align: left;
   padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  
 }
 .todo__heading {
   transform: translateY(50%);

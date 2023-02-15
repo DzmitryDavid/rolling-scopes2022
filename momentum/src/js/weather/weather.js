@@ -1,5 +1,6 @@
 const apiKey = '0c5b3d16dc85bdf8bea6b96976954874';
 export const weather = () => {
+  const weatherEl = document.querySelector('.weather');
   const weatherIconEl = document.querySelector('.weather-icon');
   const tempEl = document.querySelector('.temperature');
   const descrEl = document.querySelector('.weather-description');
@@ -8,6 +9,8 @@ export const weather = () => {
   const humidityEl = document.querySelector('.humidity');
   const weatherErrorEl = document.querySelector('.weather-error');
   const weatherContainerEl = document.querySelector('.weather-container');
+  const showWeatherBtn = document.querySelector('.weather__btn');
+
 
   const setCity = () => {
     const value = cityInput.value;
@@ -46,6 +49,11 @@ export const weather = () => {
       // weatherIcon.textContent = error.message;
     }
   }
+  const showWeather = () => {
+    weatherEl.classList.toggle('show')
+  }
   getWeather();
   cityInput.addEventListener('change', setCity);
+  showWeatherBtn.addEventListener('click', showWeather)
+
 };
