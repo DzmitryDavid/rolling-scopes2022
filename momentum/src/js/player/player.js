@@ -154,7 +154,7 @@ export const player = () => {
     isMute ? maxSound() : muteSound()
   })
 
-  showPlayerBtn.addEventListener('click', showPlayer )
+  // showPlayerBtn.addEventListener('click', showPlayer )
   
   loadSong(playlist[songIndex]);
   setPlaylist()

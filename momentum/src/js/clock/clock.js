@@ -12,7 +12,7 @@ export const clock = () => {
   (function () {
     const date = new Date();
     const options = { month: 'long', day: 'numeric', year: 'numeric' };
-    let day = date.toLocaleDateString('ru-RU', options);
+    let day = date.toLocaleDateString('en-En', options);
     dateEl.textContent = `${day}`;
   })();
 };

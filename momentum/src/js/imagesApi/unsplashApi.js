@@ -1,11 +1,10 @@
 // emLiqi2hyqdsbLvCwLzdzsZq3IVd3bm_huylULtD4EQ
-//e2077ad31a806c894c460aec8f81bc2af4d09c4f8104ae3177bb809faf0eac17
+// e2077ad31a806c894c460aec8f81bc2af4d09c4f8104ae3177bb809faf0eac17
 
-//flick key 8263545a51b704ffbafdf5fce5e4cccb
-//secret 5ae45e020227ebb5
-import greeting from '../greeting/greeting.js';
+import { greeting } from '../greeting/greeting.js';
 
 export const unsplashPicture = () => {
+  console.log('call unsplash');
   const slideBtnPrev = document.querySelector('.slide-prev');
   const slideBtnNext = document.querySelector('.slide-next');
   const bodyEl = document.querySelector('body');
@@ -40,3 +39,4 @@ export const unsplashPicture = () => {
   slideBtnNext.addEventListener('click', nextPhoto);
   slideBtnPrev.addEventListener('click', prevPhoto);
 };
+

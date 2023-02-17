@@ -1,6 +1,7 @@
-import greeting from '../greeting/greeting.js';
+import {greeting} from '../greeting/greeting.js';
 
-export const setPicture = () => {
+export const githubPicture = () => {
+  console.log('github call')
   const slideBtnPrev = document.querySelector('.slide-prev');
   const slideBtnNext = document.querySelector('.slide-next');
   const bodyEl = document.querySelector('body');

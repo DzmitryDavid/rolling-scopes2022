@@ -49,11 +49,11 @@ export const weather = () => {
       // weatherIcon.textContent = error.message;
     }
   }
-  const showWeather = () => {
-    weatherEl.classList.toggle('show')
-  }
+  // const showWeather = () => {
+  //   weatherEl.classList.toggle('show')
+  // }
   getWeather();
   cityInput.addEventListener('change', setCity);
-  showWeatherBtn.addEventListener('click', showWeather)
+  // showWeatherBtn.addEventListener('click', showWeather)
 
 };

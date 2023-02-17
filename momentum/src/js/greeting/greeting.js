@@ -1,27 +1,24 @@
-const greeting = (lang) => {
-  const greetingTranslation = {
-    rusLang: `Добрый`,
-    engLang: `Good`
-  }
+export const greeting = (lang) => {
   const greetingEl = document.querySelector('.greeting');
-  const nameInput = document.querySelector('.name');
-
+  const nameInputEl = document.querySelector('.name');
+  nameInputEl.placeholder = '[Enter your name]'
   const setInput = (e) => {
     let value = e.target.value;
     if (e.type === 'change') {
       localStorage.setItem('name', value);
-      nameInput.value = value;
-      nameInput.blur();
+      nameInputEl.value = value;
+      nameInputEl.blur();
     }
   };
 
   const checkStorage = () => {
     if (localStorage.getItem('name') === null) {
-      nameInput.value = '[Enter your name]';
+      nameInputEl.value = nameInputEl.placeholder;
     } else {
-      nameInput.value = localStorage.getItem('name');
+      nameInputEl.value = localStorage.getItem('name');
     }
   };
+  
   const getTimeOfDay = () => {
     let today = new Date();
     let hour = today.getHours();
@@ -47,14 +44,17 @@ const greeting = (lang) => {
 
   const clearInput = (e) => {
     if (localStorage.getItem('name') === null) {
-      e.target.value = '';
+      e.target.value = ' ';
+      console.log(e.target.value)
+      
     }
   };
 
-  setGreetingTime();
-  nameInput.addEventListener('change', setInput);
-  nameInput.addEventListener('click', clearInput);
+  nameInputEl.addEventListener('change', setInput);
+  nameInputEl.addEventListener('click', clearInput);
   window.addEventListener('load', checkStorage);
+
+  setGreetingTime(); 
   return getTimeOfDay
 };
-export default greeting;
+// export default greeting;

@@ -15,9 +15,60 @@
 
 <body>
   <header class="header">
-    <img class="player__btn" src="./assets/svg/play.svg" alt="show player btn">
-    <i class="weather__btn owf owf-804"></i>
+    <div class="settings">
+      <h1 class="settings__heading">Please choose settings</h1>
+      <form id="settings__form">
+
+        <div class="language">
+          <span>Choose language: </span>
+          <label class="lang-label active" for="en">English
+            <input class="lang-input" name="lang" type="radio" id="en" value="en-En">
+          </label>
+          /
+          <label class="lang-label" for="ru">Russian
+            <input class="lang-input" name="lang" type="radio" id="ru" value="ru-Ru">
+          </label>
+        </div>
+        <h3 class="image__heading">Choose image source:</h3>
+        <div class="image-source">
+          <label for="github" class="image-source__label active">github
+            <input class="image-source__input" name="photoSource" id="github" type="radio" value="github">
+          </label>
+          <label for="unsplash" class="image-source__label">unsplash
+            <input class="image-source__input" name="photoSource" id="unsplash" type="radio" value="unsplash">
+          </label>
+          <label for="flickr" class="image-source__label">flickr
+            <input class="image-source__input" name="photoSource" id="flickr" type="radio" value="flickr">
+          </label>
+        </div>
+        <h3 class="feature__heading">Features:</h3>
+        <div class="feature__blocks">
+          <label for="todo" class="feature__label">todo
+            <input class="feature__input" name="features" id="todo" type="checkbox" value="todo">
+          </label>
+          <label for="weather" class="feature__label">weather
+            <input class="feature__input" name="features" id="weather" type="checkbox" value="weather">
+          </label>
+          <label for="clock" class="feature__label">clock
+            <input class="feature__input" name="features" id="clock" type="checkbox" value="clock">
+          </label>
+          <label for="quote" class="feature__label">quote
+            <input class="feature__input" name="features" id="quote" type="checkbox" value="quote">
+          </label>
+            <label for="player" class="feature__label">player
+              <input class="feature__input" name="features" id="player" type="checkbox" value="player">
+            </label>
+         
+        </div>
+        <button class="settings__button" type="submit">submit</button>
+      </form>
+
+
+    </div>
+    <!-- <i class="weather__btn owf owf-804"></i> -->
+
     <div class="player">
+      <!-- <img class="player__btn" src="./assets/svg/play.svg" alt="show player btn"> -->
       <h2 class="player__title">song</h2>
       <div class="player-controls">
         <button class="play-prev player-icon"></button>
@@ -67,8 +118,11 @@
       <button class="slide-prev slider-icon"></button>
       <button class="slide-next slider-icon"></button>
     </div>
-    <time class="time"></time>
-    <date class="date"></date>
+    <div class="clock">
+      <time class="time"></time>
+      <date class="date"></date>
+
+    </div>
     <div class="greeting-container">
       <span class="greeting"></span>
       <input type="text" class="name" />
@@ -76,13 +130,13 @@
   </main>
   <footer class="footer">
     <button class="change-quote"></button>
-    <div>
-      <div class="quote">
-        <span id="quote">quote</span>
+    <div class="quote">
+      <div class="quote-text">
+        <span class="quote"></span>
       </div>
       <div id="author" class="author"></div>
     </div>
-    <div class="todo__wrapper">
+    <div class="todo">
       <h3 class="todo__heading">
         <span> Add a todo to get started</span>
         <button class="todo__btn">
