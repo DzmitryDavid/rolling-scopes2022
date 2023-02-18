@@ -1,7 +1,27 @@
-export const greeting = (lang) => {
+export const greeting = (time, lang='en') => {
   const greetingEl = document.querySelector('.greeting');
   const nameInputEl = document.querySelector('.name');
-  nameInputEl.placeholder = '[Enter your name]'
+
+  let greetingPhrase = '';
+  switch(time){
+    case 'morning':
+      greetingPhrase = (lang === 'ru') ? 'Доброе утро' : `Good ${time}`;
+      break;
+    case 'afternoon': 
+    greetingPhrase = (lang === 'ru') ? 'Добрый день' : `Good ${time}`;
+      break;
+    case 'evening':
+      greetingPhrase = (lang === 'ru') ? 'Добрый вечер' : `Good ${time}`;
+      break;
+      case 'night':
+        greetingPhrase = (lang === 'ru') ? 'Доброй ночи' : `Good ${time}`;
+        break;
+  }
+  console.log(greetingPhrase)
+  greetingEl.textContent = greetingPhrase;
+
+  nameInputEl.placeholder =
+    lang === 'ru' ? '[Введите ваше имя]' : '[Enter your name]';
   const setInput = (e) => {
     let value = e.target.value;
     if (e.type === 'change') {
@@ -18,35 +38,10 @@ export const greeting = (lang) => {
       nameInputEl.value = localStorage.getItem('name');
     }
   };
-  
-  const getTimeOfDay = () => {
-    let today = new Date();
-    let hour = today.getHours();
-    let currentTime = '';
-    if (hour > 6 && hour < 12) {
-      currentTime = 'morning';
-    } else if (hour >= 12 && hour < 18) {
-      currentTime = 'afternoon';
-    } else if (hour >= 18 && hour < 24) {
-      currentTime = 'evening';
-    } else {
-      currentTime = 'night';
-    }
-
-    return currentTime;
-  };
-  
-  const setGreetingTime = () => {
-    const currentTime = getTimeOfDay();
-    let greetingPhrase = `Good ${currentTime}`;
-    greetingEl.textContent = greetingPhrase;
-  };
-
   const clearInput = (e) => {
     if (localStorage.getItem('name') === null) {
       e.target.value = ' ';
-      console.log(e.target.value)
-      
+      console.log(e.target.value);
     }
   };
 
@@ -54,7 +49,4 @@ export const greeting = (lang) => {
   nameInputEl.addEventListener('click', clearInput);
   window.addEventListener('load', checkStorage);
 
-  setGreetingTime(); 
-  return getTimeOfDay
 };
-// export default greeting;

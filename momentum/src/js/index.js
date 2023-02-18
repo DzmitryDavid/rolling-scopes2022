@@ -1,5 +1,5 @@
 import { greeting } from './greeting/greeting.js';
-import { getQuotes } from './quotes/quotes.js';
+import { quotes } from './quotes/quotes.js';
 import { player } from './player/player.js';
 import { clock } from './clock/clock.js';
 import { unsplashPicture } from './imagesApi/unsplashApi.js';
@@ -12,8 +12,26 @@ const form = document.querySelector('#settings__form');
 const featureInputs = document.querySelectorAll('.feature__input');
 const featureLabels = document.querySelectorAll('.feature__label');
 
-let defaultState = {
-  lang: 'en-En',
+const getTimeOfDay = () => {
+  let today = new Date();
+  let hour = today.getHours();
+  let timeOfDay = '';
+  if (hour > 6 && hour < 12) {
+    timeOfDay = 'morning';
+  } else if (hour >= 12 && hour < 18) {
+    timeOfDay = 'afternoon';
+  } else if (hour >= 18 && hour < 24) {
+    timeOfDay = 'evening';
+  } else {
+    timeOfDay = 'night';
+  }
+  return timeOfDay;
+};
+
+const time = getTimeOfDay();
+
+let state = {
+  lang: 'en',
   photoSource: 'github',
   features: [],
 };
@@ -27,8 +45,8 @@ function getData(form) {
       featuresArr.push(inp.value);
     }
   });
-  defaultState = {
-    ...defaultState,
+  state = {
+    ...state,
     ...Object.fromEntries(formData),
     features: [...featuresArr],
   };
@@ -38,8 +56,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   getData(form);
   displayFeatureElements();
-
-  console.log(defaultState);
+  changeableSettings()
 });
 
 const displayFeatureElements = () => {
@@ -94,14 +111,19 @@ const settings = () => {
   languageSettingStyle();
   imageSourceSettingStyle();
   featureSettingsStyle();
-  clock();
   todo();
   player();
-  weather();
-  greeting();
-  // githubPicture();
-  getQuotes();
+  greeting(time);
+  clock(state.lang);
+  githubPicture(time);
+  quotes();
 };
+
+const changeableSettings = () => {
+  greeting(time,state.lang);
+  clock(state.lang);
+  weather(state.lang)
+}
 
 // // flickPicture()
 // unsplashPicture()

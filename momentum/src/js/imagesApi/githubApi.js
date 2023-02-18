@@ -1,6 +1,5 @@
-import {greeting} from '../greeting/greeting.js';
 
-export const githubPicture = () => {
+export const githubPicture = (time) => {
   console.log('github call')
   const slideBtnPrev = document.querySelector('.slide-prev');
   const slideBtnNext = document.querySelector('.slide-next');
@@ -10,11 +9,10 @@ export const githubPicture = () => {
   let randomNum = Math.floor(Math.random() * 20 + 1)
     .toString()
     .padStart(2, 0);
-  let currentDayTime = greeting()();
 
   const setBg = () => {
     const img = new Image();
-    img.src = `https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${currentDayTime}/${randomNum}.webp`;
+    img.src = `https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${time}/${randomNum}.webp`;
 
     img.onload = () => {
       bodyEl.style.backgroundImage = `url('${img.src}')`;
@@ -29,7 +27,7 @@ export const githubPicture = () => {
       slideIndex = 1;
     }
     slideIndex = slideIndex.toString().padStart(2, 0);
-    img.src = `https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${currentDayTime}/${slideIndex}.webp`;
+    img.src = `https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${time}/${slideIndex}.webp`;
 
     img.onload = () => {
       bodyEl.style.backgroundImage = `url('${img.src}')`;
@@ -43,7 +41,7 @@ export const githubPicture = () => {
       slideIndex = 20;
     }
     slideIndex = slideIndex.toString().padStart(2, 0);
-    img.src = `https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${currentDayTime}/${slideIndex}.webp`;
+    img.src = `https://raw.githubusercontent.com/DzmitryDavid/stage1-tasks/assets/images/${time}/${slideIndex}.webp`;
     img.onload = () => {
       bodyEl.style.backgroundImage = `url('${img.src}')`;
     };

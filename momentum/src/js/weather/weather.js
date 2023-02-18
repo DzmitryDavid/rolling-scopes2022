@@ -1,5 +1,5 @@
 const apiKey = '0c5b3d16dc85bdf8bea6b96976954874';
-export const weather = () => {
+export const weather = (lang) => {
   const weatherEl = document.querySelector('.weather');
   const weatherIconEl = document.querySelector('.weather-icon');
   const tempEl = document.querySelector('.temperature');
@@ -22,7 +22,7 @@ export const weather = () => {
 
   async function getWeather(city = 'Minsk') {
     try {
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&units=metric&appid=${apiKey}`;
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&units=metric&appid=${apiKey}`;
       const res = await fetch(url);
       const data = await res.json();
       if (res.status === 404) {
@@ -35,25 +35,20 @@ export const weather = () => {
         weatherErrorEl.classList.remove('weather-error--visible');
         weatherContainerEl.classList.remove('weather-container--hidden');
         
-
+        
         weatherIconEl.classList.add(`owf-${data.weather[0].id}`);
-        tempEl.textContent = `temperature ${Math.floor(data.main.temp)}°C`;
+        tempEl.textContent = (lang === 'ru') ? `температура ${Math.floor(data.main.temp)}°C` : `temperature ${Math.floor(data.main.temp)}°C`;
         descrEl.textContent = data.weather[0].description;
-        windEl.textContent = `Wind speed: ${Math.floor(data.wind.speed)} m/s`;
-        humidityEl.textContent = `Humidity: ${data.main.humidity}%`;
+        windEl.textContent = (lang === 'ru') ? `Скорость ветра ${Math.floor(data.wind.speed)} м/с` : `Wind speed: ${Math.floor(data.wind.speed)} m/s`;
+        humidityEl.textContent = (lang === 'ru') ? `Влажность ${data.main.humidity}%` :  `Humidity: ${data.main.humidity}%`;
         
       }
     } catch (error) {
       console.log(error);
-      // if(){}
-      // weatherIcon.textContent = error.message;
     }
   }
-  // const showWeather = () => {
-  //   weatherEl.classList.toggle('show')
-  // }
-  getWeather();
+
   cityInput.addEventListener('change', setCity);
-  // showWeatherBtn.addEventListener('click', showWeather)
+  return getWeather();
 
 };

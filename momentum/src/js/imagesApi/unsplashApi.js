@@ -21,6 +21,7 @@ export const unsplashPicture = () => {
       const data = await response.json();
       const img = new Image();
       img.src = data[0].urls.regular;
+      
       img.onload = () => {
         bodyEl.style.backgroundImage = `url('${data[0].urls.regular}'`;
       };
