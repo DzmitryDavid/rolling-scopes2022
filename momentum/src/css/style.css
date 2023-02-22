@@ -536,16 +536,17 @@ input[type="range"]::-webkit-slider-thumb {
   min-width: 450px;
   min-height: 250px;
   padding: 1rem;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all .6s ease;
 }
 #settings__form {
   padding: 15px;
 }
 .settings__heading {
   text-align: center;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .settings__button {
   margin: 0 auto;
@@ -563,23 +564,40 @@ input[type="range"]::-webkit-slider-thumb {
   background: hsla(255 20% 25% / 0.75);
   transition: filter 0.15s ease;
 }
-.language {
-  display: flex;
-  justify-content: space-between;
+.settings__icon {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  cursor:pointer;
 }
-.language span {
-  opacity: 0.6;
+.language {
+  text-align: center;
+  /* display: flex;
+  justify-content: space-between; */
+}
+.lang__heading {
+  /* font-size: 15px; */
+  opacity: 0.5;
 }
 .lang-input {
   cursor: pointer;
   visibility: hidden;
   opacity: 0;
 }
+.lang-label__wrapper {
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  
+  justify-content: space-between;
+  width: 200px;
+}
 .lang-label {
   cursor: pointer;
-  opacity: 0.4;
+  opacity: 0.2;
 }
 .lang-label:hover {
+  transition: all .2s ease;
   filter: brightness(90%);
   opacity: 1;
 }
@@ -601,9 +619,10 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .image-source__label {
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.2;
 }
 .image-source__label:hover {
+  transition: all .2s ease;
   filter: brightness(90%);
   opacity: 1;
 }
@@ -619,7 +638,8 @@ input[type="range"]::-webkit-slider-thumb {
 .hidden {
   visibility: hidden;
   opacity: 0;
-  height: 0;
+  /* height: 0; */
+  transition: all .6s ease;
 }
 .visible {
   opacity: 1;
@@ -638,9 +658,9 @@ input[type="range"]::-webkit-slider-thumb {
 .feature__label {
   opacity: 0.5;
   cursor: pointer;
-  text-transform: capitalize;
 }
 .feature__label:hover {
+  transition: all .2s ease;
   opacity: 1;
   filter: brightness(90%);
 }
@@ -659,4 +679,32 @@ input[type="range"]::-webkit-slider-thumb {
   width: 60%;
   margin: 0 auto;
   text-align: center;
+}
+.tag-wrapper {
+  margin-top: 10px;
+  text-align: center;
+  
+}
+.tag-input {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 30%;
+  padding-left: 20px;
+  padding: 8px 21px calc(21px) - 3px;
+  
+  border: none;
+  font-size: 1rem;
+  overflow: hidden;
+  color: #fff;
+  background: transparent;
+  border-bottom-color: hsla(0 0 100% / 85%);
+}
+.tag-input--active {
+  opacity: .75;
+  visibility: visible;
+  height: auto;
+}
+.tag-input:focus {
+  outline: none;
 }

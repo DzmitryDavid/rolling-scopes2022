@@ -15,22 +15,27 @@
 
 <body>
   <header class="header">
+    <div class="settings__icon">
+      <img src="./assets/svg/menu-horizontal.svg" alt="">
+    </div>
     <div class="settings">
-      <h1 class="settings__heading">Please choose settings</h1>
-      <hr class="divider">
+      <h1 class="settings__heading"></h1>
       <form id="settings__form">
 
         <div class="language">
-          <span>Choose language: </span>
-          <label class="lang-label active" for="en">English
-            <input class="lang-input" name="lang" type="radio" id="en" value="en">
-          </label>
-          /
-          <label class="lang-label" for="ru">Russian
-            <input class="lang-input" name="lang" type="radio" id="ru" value="ru">
-          </label>
+          <h3 class="lang__heading"></h3>
+          <hr class="divider">
+          <div class="lang-label__wrapper">
+            <label class="lang-label active" for="en">English
+              <input class="lang-input" name="lang" type="radio" id="en" value="en">
+            </label>
+            /
+            <label class="lang-label" for="ru">Russian
+              <input class="lang-input" name="lang" type="radio" id="ru" value="ru">
+            </label>
+          </div>
         </div>
-        <h3 class="image__heading">Choose image source:</h3>
+        <h3 class="image__heading"></h3>
         <hr class="divider">
         <div class="image-source">
           <label for="github" class="image-source__label active">github
@@ -42,8 +47,13 @@
           <label for="flickr" class="image-source__label">flickr
             <input class="image-source__input" name="photoSource" id="flickr" type="radio" value="flickr">
           </label>
+          
         </div>
-        <h3 class="feature__heading">Features:</h3>
+        <div class="tag-wrapper">
+          <input class="tag-input" type="text" placeholder="Tag">
+
+        </div>
+        <h3 class="feature__heading"></h3>
         <hr class="divider">
         <div class="feature__blocks">
           <label for="todo" class="feature__label">todo
@@ -68,10 +78,8 @@
 
 
     </div>
-    <!-- <i class="weather__btn owf owf-804"></i> -->
 
     <div class="player">
-      <!-- <img class="player__btn" src="./assets/svg/play.svg" alt="show player btn"> -->
       <h2 class="player__title">song</h2>
       <div class="player-controls">
         <button class="play-prev player-icon"></button>
