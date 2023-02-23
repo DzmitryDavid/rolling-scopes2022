@@ -40,7 +40,6 @@ export const greeting = (time, lang='en') => {
   const clearInput = (e) => {
     if (localStorage.getItem('name') === null) {
       e.target.value = ' ';
-      console.log(e.target.value);
     }
   };
 
