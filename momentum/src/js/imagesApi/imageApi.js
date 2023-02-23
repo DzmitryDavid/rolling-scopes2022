@@ -64,7 +64,6 @@ export const imageApi = (time, photoSource) => {
     tagInputEl.classList.add('tag-input--active')
     const tag =  tagInputEl.value
     
-    console.log(tag)
     const count = 1;
     const apiKey = 'emLiqi2hyqdsbLvCwLzdzsZq3IVd3bm_huylULtD4EQ';
     const unsplashApi = `https://api.unsplash.com/photos/random/?orientation=landscape&query=${tag !== '' ? tag : time}&client_id=${apiKey}&count=${count}`;

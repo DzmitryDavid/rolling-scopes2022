@@ -47,6 +47,7 @@ export const menu = (time,state) => {
       features: [...featuresArr],
     };
     localStorage.setItem('state', JSON.stringify(state));
+    
   }
 
   form.addEventListener('submit', (e) => {
@@ -112,7 +113,6 @@ export const menu = (time,state) => {
   const imageSourceSettingStyle = () => {
     const imageSourceInputs = document.querySelectorAll('.image-source__input');
     const imageSourceLabel = document.querySelectorAll('.image-source__label');
-    console.log(document.querySelector(`[for=${state.photoSource}]`))
     document.querySelector(`[for=${state.photoSource}]`).classList.add('active');
     
     imageSourceInputs.forEach((inp) => {
