@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "description": "RS-task2022Q4 momentum",
+  "private": true,
+  "name": "momentum",
+  "scripts": {
+    "start": "rss-scripts start",
+    "build": "rss-scripts build"
+  },
+  "devDependencies": {
+    "rss-scripts": "^0.2.4"
+  }
+}

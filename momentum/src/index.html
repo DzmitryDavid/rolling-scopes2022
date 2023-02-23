@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Momentum</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="settings__icon">
+      <img src="./assets/svg/menu-horizontal.svg" alt="">
+    </div>
+    <div class="settings">
+      <h1 class="settings__heading"></h1>
+      <form id="settings__form">
+
+        <div class="language">
+          <h3 class="lang__heading"></h3>
+          <hr class="divider">
+          <div class="lang-label__wrapper">
+            <label class="lang-label" for="en">English
+              <input class="lang-input" name="lang" type="radio" id="en" value="en">
+            </label>
+            /
+            <label class="lang-label" for="ru">Russian
+              <input class="lang-input" name="lang" type="radio" id="ru" value="ru">
+            </label>
+          </div>
+        </div>
+        <h3 class="image__heading"></h3>
+        <hr class="divider">
+        <div class="image-source">
+          <label for="github" class="image-source__label">github
+            <input class="image-source__input" name="photoSource" id="github" type="radio" value="github">
+          </label>
+          <label for="unsplash" class="image-source__label">unsplash
+            <input class="image-source__input" name="photoSource" id="unsplash" type="radio" value="unsplash">
+          </label>
+          <label for="flickr" class="image-source__label">flickr
+            <input class="image-source__input" name="photoSource" id="flickr" type="radio" value="flickr">
+          </label>
+          
+        </div>
+        <div class="tag-wrapper">
+          <input class="tag-input" type="text" placeholder="Tag">
+
+        </div>
+        <h3 class="feature__heading"></h3>
+        <hr class="divider">
+        <div class="feature__blocks">
+          <label for="todo" class="feature__label">todo
+            <input class="feature__input" name="features" id="todo" type="checkbox" value="todo">
+          </label>
+          <label for="weather" class="feature__label">weather
+            <input class="feature__input" name="features" id="weather" type="checkbox" value="weather">
+          </label>
+          <label for="clock" class="feature__label">clock
+            <input class="feature__input" name="features" id="clock" type="checkbox" value="clock">
+          </label>
+          <label for="quote" class="feature__label">quote
+            <input class="feature__input" name="features" id="quote" type="checkbox" value="quote">
+          </label>
+            <label for="player" class="feature__label">player
+              <input class="feature__input" name="features" id="player" type="checkbox" value="player">
+            </label>
+         
+        </div>
+        <button class="settings__button" type="submit">Apply</button>
+      </form>
+
+
+    </div>
+
+    <div class="player">
+      <h2 class="player__title">song</h2>
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+      </div>
+      <audio src="./assets/sounds/Aqua Caelestis.mp3"></audio>
+      <div class="volume">
+        <!-- <i class="fa-solid fa-volume-xmark"></i> -->
+
+
+        <div class="volume-down" title="mute button">
+          <i class="fa-solid fa-volume-low"></i>
+        </div>
+        <div class="input__wrapper">
+          <input type="range" class="progress__volume"></input>
+        </div>
+        <div class="volume-up">
+          <i class="fa-solid fa-volume-high"></i>
+        </div>
+      </div>
+      <div class="progress__container">
+        <div id="progress" class="progress"></div>
+        <div class="duration__wrapper">
+          <span id="current-time">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+    <div class="weather">
+      <input type="text" class="city" value="Minsk" />
+      <div class="weather-error"></div>
+      <div class="weather-container">
+        <i class="weather-icon owf "></i>
+        <div class="description-container">
+          <span class="temperature">32</span>
+          <span class="weather-description">Snow</span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <div class="clock">
+      <time class="time"></time>
+      <date class="date"></date>
+
+    </div>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" />
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="quote">
+      <button class="change-quote"></button>
+      <div class="quote-text">
+        <span class="quote"></span>
+      </div>
+      <div id="author" class="author"></div>
+    </div>
+    <div class="todo">
+      <h3 class="todo__heading">
+        <span class="todo__title"> Add a todo to get started</span>
+        <button class="todo__btn">
+          New Todo
+        </button>
+      </h3>
+      <ul class="todo-list"></ul>
+      <div class="todo__input-wrapper">
+        <input type="text" placeholder="New todo" class="todo__input">
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="js/index.js"></script>
+</body>
+
+</html>
