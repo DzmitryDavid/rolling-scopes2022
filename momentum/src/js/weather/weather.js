@@ -22,7 +22,7 @@ export const weather = (lang) => {
 
   async function getWeather(city = 'Minsk') {
     try {
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&units=metric&appid=${apiKey}`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&units=metric&appid=${apiKey}`;
       const res = await fetch(url);
       const data = await res.json();
       if (res.status === 404) {

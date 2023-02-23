@@ -16,7 +16,6 @@ if(localStorage.getItem('state') === null) {
 
 }
 
-console.log(state);
 const getTimeOfDay = () => {
   let today = new Date();
   let hour = today.getHours();

@@ -61,7 +61,6 @@ export const player = () => {
   const loadSong = (song) => {
   
     songTitle.textContent = song.title;
-    // songAuthor.textContent = song.author;
     audio.src = song.src;
     
   };
@@ -154,8 +153,6 @@ export const player = () => {
     isMute ? maxSound() : muteSound()
   })
 
-  // showPlayerBtn.addEventListener('click', showPlayer )
-  
   loadSong(playlist[songIndex]);
   setPlaylist()
 
