@@ -1,7 +1,25 @@
-
 import { menu } from './menu/menu.js';
 
+let state;
+const checkStorage = () => {
+  if (localStorage.getItem('state') === null) {
+      state = {
+        lang: 'en',
+        photoSource: 'github',
+        features: [],
+      };
+    } else {
+      const storageState = localStorage.getItem('state');
+      const parsingState = JSON.parse(storageState);
+      state = parsingState;
+    }
+    return state
+}
+const storageState = localStorage.getItem('state');
+  const parsingState = JSON.parse(storageState);
+  state = parsingState;
 
+console.log(state)
 const getTimeOfDay = () => {
   let today = new Date();
   let hour = today.getHours();
@@ -20,4 +38,5 @@ const getTimeOfDay = () => {
 
 const time = getTimeOfDay();
 
-menu(time)
+menu(time, state);
+window.addEventListener('DOMContentLoaded', checkStorage)

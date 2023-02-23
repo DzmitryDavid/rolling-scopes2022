@@ -17,7 +17,6 @@ export const greeting = (time, lang='en') => {
         greetingPhrase = (lang === 'ru') ? 'Доброй ночи' : `Good ${time}`;
         break;
   }
-  console.log(greetingPhrase)
   greetingEl.textContent = greetingPhrase;
 
   nameInputEl.placeholder =
